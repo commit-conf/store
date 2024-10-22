@@ -1,0 +1,31 @@
+#!/bin/bash
+# Compile SCSS files into CSS
+# All generated files will be included in src/_data/css.json
+set -e
+JSON_CONTENTS=
+
+function compile {
+
+  # Launch sass and postcss
+  filename=$1
+  output=.build/src/_data/$(basename "$filename" | sed s/\\.scss/.css/)
+  node_modules/.bin/sass "$filename" | node_modules/.bin/postcss -o "$output"
+
+  # add hash
+  md5=$(md5sum "$output" | cut -c1-21) 
+  hashedname=${output%.*}.${md5}.${output##*.}
+  mv "$output" "$hashedname"
+  echo "Generated $hashedname $(stat -c%s "$hashedname" | numfmt --to=iec-i --suffix=B --padding=7)"
+
+  # add to sass-assets.json
+  [[ !  -z  $JSON_CONTENTS  ]] && JSON_CONTENTS+=,
+  JSON_CONTENTS="${JSON_CONTENTS}
+  \"css\": [\"/css/$(basename "$hashedname")\"]"
+}
+
+mkdir -p .build/src/_data
+compile src/_sass/main.scss
+
+echo "{
+  \"---\": \"This file is autogenereated by bin/compile-css\",${JSON_CONTENTS}
+}" > .build/src/_data/assets.json
