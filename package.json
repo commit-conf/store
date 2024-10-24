@@ -6,12 +6,13 @@
     "clean": "rm -rf .build _site",
     "==": "========== Build ===========",
     "build:sass": "bin/compile-css",
-    "build:eleventy": "npx @11ty/eleventy --formats=11ty.ts",
+    "build:eleventy": "npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --formats=11ty.ts",
     "build": "npm run clean; npm-run-all build:sass build:eleventy",
     "===": "========== Watch ===========",
     "watch:sass": "inotifywait -m -r -e close_write,create,delete src/_sass/ | while read NEWFILE; do npm run build:sass && cp .build/src/_data/*.css _site/css/; done",
-    "watch:eleventy": "ENV=dev npx @11ty/eleventy --serve --port=8081 --formats=11ty.ts",
-    "watch": "npm run clean; npm-run-all build:sass --parallel watch:*"
+    "watch:eleventy": "ENV=development npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --serve --formats=11ty.ts",
+    "watch": "npm run clean; npm run build:sass; npm-run-all --parallel watch:sass watch:eleventy",
+    "debug": "DEBUG=* npx @11ty/eleventy --formats=11ty.ts,11ty.tsx"
   },
   "keywords": [],
   "author": "",
@@ -23,15 +24,11 @@
     "@types/node": "^22.7.7",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
-    "esm": "^3.2.25",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
     "sass": "^1.80.3",
+    "tsx": "^4.19.1",
     "typescript": "^5.6.3"
-  },
-  "dependencies": {
-    "npm-run-all": "^4.1.5",
-    "react-dom": "^18.3.1",
-    "save-dev": "^0.0.1-security"
   }
 }

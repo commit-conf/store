@@ -1,2 +1,3 @@
 _site
-.build
+css
+src/_data/assets.json

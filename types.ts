@@ -1,4 +1,4 @@
-import { Lang } from "./src/_includes/i18n";
+import { Lang } from "./src/_includes/i18n/index.11ty";
 
 // types.ts
 export interface Assets {

@@ -8,7 +8,7 @@ function compile {
 
   # Launch sass and postcss
   filename=$1
-  output=.build/src/_data/$(basename "$filename" | sed s/\\.scss/.css/)
+  output=css/$(basename "$filename" | sed s/\\.scss/.css/)
   node_modules/.bin/sass "$filename" | node_modules/.bin/postcss -o "$output"
 
   # add hash
@@ -23,9 +23,10 @@ function compile {
   \"css\": [\"/css/$(basename "$hashedname")\"]"
 }
 
-mkdir -p .build/src/_data
+mkdir -p css
+rm -rf css/*
 compile src/_sass/main.scss
 
 echo "{
   \"---\": \"This file is autogenereated by bin/compile-css\",${JSON_CONTENTS}
-}" > .build/src/_data/assets.json
+}" > src/_data/assets.json
