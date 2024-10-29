@@ -3,6 +3,9 @@ import { Lang } from "./src/_includes/i18n/index.11ty";
 // types.ts
 export interface Assets {
   css: string;
+  js: {
+    main: string[]
+  }
 }
 
 export interface EleventyDefaults {
@@ -22,7 +25,6 @@ export interface EleventyDefaults {
     outputFileExtension: string;
     templateSyntax: 'ts';
     date: Date;
-    rawInput: string;
     outputPath: string;
   }
   eleventy: {

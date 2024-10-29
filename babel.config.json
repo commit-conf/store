@@ -1,0 +1,23 @@
+{
+  "ignore": [],
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false
+      }
+    ],
+    "@babel/typescript"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": false,
+        "regenerator": true
+      }
+    ],
+    "@babel/plugin-transform-optional-chaining",
+    "babel-plugin-lodash"
+  ]
+}

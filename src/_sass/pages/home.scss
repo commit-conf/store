@@ -1,0 +1,102 @@
+.hero {
+  --hero-min-height: calc(100vh - 11.7rem);
+  --hero-button-font-size: calc(
+    clamp(var(--font-size-xl), 2vw, var(--font-size-3xl))
+  );
+  --hero-subtitle-size: calc(
+    clamp(var(--font-size-4xl), 5vw, var(--font-size-6xl))
+  );
+  --hero-button-padding: calc(clamp(var(--padding-2), 1.8vw, var(--padding-6)));
+  --hero-shadow: 0 0 3rem rgba(0, 0, 50, 0.8);
+
+  justify-content: center;
+  align-items: center;
+  min-height: var(--hero-min-height);
+  z-index: 1;
+  background-color: var(--color-lime-400);
+  position: relative;
+}
+
+.hero-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.hero-text {
+  z-index: 1;
+}
+
+.hero-logo {
+  width: calc(max(50%, 20rem));
+}
+
+.hero-subtitle {
+  font-size: var(--hero-subtitle-size);
+  color: var(--color-white);
+  margin-top: 1vw;
+  margin-bottom: 0;
+  text-shadow: var(--hero-shadow);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--gap-3);
+
+  & > .button {
+    padding: var(--hero-button-padding) calc(var(--hero-button-padding) * 1.5);
+    font-size: var(--hero-button-font-size);
+    margin: 0;
+    box-shadow: var(--hero-shadow);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    --hero-min-height: calc(100vh - 9.7rem);
+  }
+  .hero-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap-4);
+  }
+
+  p {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+// animate text as we scroll
+//@supports (animation-timeline: view()) {
+.animate-with-scroll {
+  & > span {
+    display: inline-block;
+    opacity: 0.2;
+    //filter: saturate(0.1) brightness(0.5);
+    //view-timeline: --subjectReveal block;
+    animation-timeline: view();
+    animation-name: highlight-text;
+    animation-fill-mode: both;
+    animation-duration: 1ms;
+  }
+
+  & > span:nth-of-type(1) {
+    animation-range: cover 0% cover 65%;
+  }
+  & > span:nth-of-type(2) {
+    animation-range: cover 45% cover 120%;
+  }
+}
+
+@keyframes highlight-text {
+  50% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,23 @@
+.wide {
+  width: 100%;
+}
+
+.width-25 {
+  width: calc(min(100%, 25rem));
+}
+
+@media (min-width: var(--breakpoint-medium)) {
+  .medium-width-70 {
+    width: 70%;
+  }
+}
+
+@media (min-width: var(--breakpoint-large)) {
+  .large-width-50 {
+    width: 50%;
+  }
+}
+
+:root {
+  --width-large: 1280px;
+}

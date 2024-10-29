@@ -1,0 +1,43 @@
+:root {
+  --padding-page-head: var(--padding-4);
+}
+
+// container with margin on both sides
+.content {
+  padding: var(--padding-10) var(--padding-8);
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+.section-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section + section > .section-center,
+.limited-large.content + .limited-large.content {
+  // too much distance when there are two sections together
+  padding-top: var(--padding-2);
+}
+
+@media (min-width: var(--breakpoint-medium)) {
+  // add .limited to set a maximum body width
+  .limited-large {
+    max-width: var(--width-large);
+    margin: 0 auto;
+  }
+}

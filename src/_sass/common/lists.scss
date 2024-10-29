@@ -1,0 +1,31 @@
+// Lists
+:root {
+  --list-side-margin: var(--margin-5);
+}
+ul,
+ol,
+dl {
+  list-style-type: square;
+  margin-left: var(--list-side-margin);
+  margin-bottom: var(--margin-4);
+}
+ul {
+  // use a square as bullet
+  &.unstyled {
+    list-style-type: none;
+    margin: 0 0 var(--margin-4) 0;
+  }
+}
+
+/* Ordered Lists */
+ol {
+  list-style-type: decimal;
+  margin-left: var(--list-side-margin);
+}
+
+/* Definition Lists */
+dl {
+  dt {
+    font-weight: bold;
+  }
+}

@@ -28,5 +28,5 @@ rm -rf css/*
 compile src/_sass/main.scss
 
 echo "{
-  \"---\": \"This file is autogenereated by bin/compile-css\",${JSON_CONTENTS}
+  ${JSON_CONTENTS}
 }" > src/_data/assets.json

@@ -1,0 +1,72 @@
+:root {
+  --margin-0: 0;
+  --margin-1: 0.25rem;
+  --margin-2: 0.5rem;
+  --margin-3: 0.75rem;
+  --margin-4: 1rem;
+  --margin-5: 1.25rem;
+  --margin-6: 1.5rem;
+  --margin-8: 2rem;
+  --margin-10: 2.5rem;
+  --margin-12: 3rem;
+  --margin-16: 4rem;
+  --margin-20: 5rem;
+}
+
+.margin-top {
+  margin-top: var(--margin-4) !important;
+}
+
+.margin,
+.margin-bottom {
+  margin-bottom: var(--margin-4) !important;
+}
+
+.margin-right {
+  margin-right: var(--margin-4) !important;
+}
+
+.margin-left {
+  margin-left: var(--margin-4) !important;
+}
+
+.margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-top-2 {
+  margin-top: var(--margin-2);
+}
+
+.margin-bottom-2 {
+  margin-bottom: var(--margin-2);
+}
+
+.margin-right-2 {
+  margin-right: var(--margin-2);
+}
+
+.margin-left-2 {
+  margin-left: var(--margin-2) !important;
+}
+
+.no-margin {
+  margin: var(--margin-0) !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: var(--margin-0) !important;
+}
+
+.no-margin-right {
+  margin-right: var(--margin-0) !important;
+}
+
+.no-margin-top {
+  margin-top: var(--margin-0) !important;
+}
+
+.margin-1 {
+  margin: var(--margin-1) !important;
+}

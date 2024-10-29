@@ -1,0 +1,10 @@
+@keyframes vertSlideDownIn {
+  from {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 100;
+  }
+}

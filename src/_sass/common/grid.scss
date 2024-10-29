@@ -1,0 +1,39 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  --grid-gap: 2rem;
+  column-gap: var(--grid-gap);
+  row-gap: calc(var(--grid-gap) * 0.75);
+}
+
+@media (min-width: var(--breakpoint-medium)) {
+  .grid {
+    --grid-gap: 3rem;
+  }
+}
+
+:root {
+  --gap-0: 0;
+  --gap-1: 0.25rem;
+  --gap-2: 0.5rem;
+  --gap-3: 0.75rem;
+  --gap-4: 1rem;
+  --gap-5: 1.25rem;
+  --gap-6: 1.5rem;
+  --gap-8: 2rem;
+}
+
+.gap-1 {
+  gap: var(--gap-4);
+}
+
+.gap-2 {
+  gap: var(--gap-6);
+}
+
+.autofill-120 {
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+}
+.autofill-140 {
+  grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
+}

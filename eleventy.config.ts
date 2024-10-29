@@ -1,7 +1,8 @@
-import "tsx/esm";
 
-/**  @param { (import("@11ty/eleventy/src/UserConfig").default) } eleventyConfig  */
+/** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
+
+  eleventyConfig.addTemplateFormats("11ty.ts");
 
   // We can add support for JSX too, at the same time:
   eleventyConfig.addExtension(["11ty.ts", ".ts"], {
@@ -14,20 +15,23 @@ export default function (eleventyConfig) {
     },
   });
 
-  /**
-   * Combine data in the Eleventy data cascade, rather than overwriting it
-   * @see {@link https://www.11ty.dev/docs/data-deep-merge/ Data deep merge in 11ty}
-   */
-  eleventyConfig.setDataDeepMerge(true);
+  // so we can recompile the client js with webpack before
+  eleventyConfig.setWatchThrottleWaitTime(1000); // in milliseconds
 
   eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy({ "static/*": "." });
+  eleventyConfig.addPassthroughCopy({ "static/img": "img" });
+  eleventyConfig.addPassthroughCopy({ "static/svg": "svg" });
 
-  return {
-    dir: {
-      input: "src/pages",       // default: "."
-      includes: '../_includes',   // default: "_includes" (`input` relative)
-      layouts: '../_includes/layouts',
-		  data: "../_data",           // default: "_data" (`input` relative)
-    },
-  }
+  //eleventyConfig.addWatchTarget("./src/_includes/**")
+
+  // default: "."
+  eleventyConfig.setInputDirectory("src/pages");
+  // default: "_includes" (`input` relative)
+  eleventyConfig.setIncludesDirectory("../_includes");
+  eleventyConfig.setLayoutsDirectory("../_includes/layouts");
+  // default: "_data" (`input` relative)
+  eleventyConfig.setDataDirectory("../_data");
+
 }

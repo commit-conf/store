@@ -1,0 +1,52 @@
+footer {
+  // when there is no content, creates separation with the left menu. Find other options.
+  // margin-top: var(--footer-padding);
+  background: var(--color-footer-bg);
+  width: 100%;
+  color: var(--color-footer-link);
+}
+
+.footer-row {
+  padding: var(--footer-padding);
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  &.theme-2 {
+    background: var(--color-footer-bg-theme-2);
+  }
+}
+.footer-column-title {
+  margin-bottom: var(--margin-5);
+  text-transform: uppercase;
+  color: var(--color-footer-title);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: var(--font-size-m);
+  font-family: var(--body-font);
+}
+.footer-link {
+  color: var(--color-footer-link);
+  transition: color var(--transition-duration-1) ease;
+  margin: var(--margin-3) 0;
+  display: block;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--color-footer-link-hover);
+    text-decoration: underline;
+  }
+}
+
+.logo-footer {
+  width: var(--footer-logo-width);
+  height: 25px;
+  text-indent: -1000px;
+  overflow: hidden;
+  display: block;
+  background: url("/svg/wlogo.svg") no-repeat;
+  background-size: contain;
+  margin-right: var(--margin-5);
+}

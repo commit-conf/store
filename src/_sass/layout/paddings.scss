@@ -1,0 +1,36 @@
+:root {
+  --padding-0: 0px; // 0;
+  --padding-1: 4px; // 0.25rem;
+  --padding-2: 8px; // 0.5rem;
+  --padding-3: 12px; // 0.75rem;
+  --padding-4: 16px; // 1rem;
+  --padding-5: 20px; // 1.25rem;
+  --padding-6: 24px; // 1.5rem;
+  --padding-8: 32px; // 2rem;
+  --padding-10: 40px; // 2.5rem;
+  --padding-12: 48px; // 3rem;
+  --padding-16: 64px; // 4rem;
+  --padding-20: 80px; // 5rem;
+}
+
+// https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/
+
+.no-padding {
+  padding: var(--padding-0) !important;
+}
+
+.padding-top-6 {
+  padding-top: var(--padding-6);
+}
+
+.padding-top-8 {
+  padding-top: var(--padding-8);
+}
+
+.padding-top-10 {
+  padding-top: var(--padding-10);
+}
+
+.padding-bottom-10 {
+  padding-bottom: var(--padding-10);
+}

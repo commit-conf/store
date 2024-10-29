@@ -1,4 +1,24 @@
-* {
-  box-sizing: border-box;
-  color: blue;
-}
+@use "layout/responsive";
+@use "layout/colors";
+@use "layout/margins";
+@use "layout/paddings";
+@use "layout/widths";
+@use "layout/fonts";
+@use "layout/borders";
+@use "layout/shadows";
+@use "layout/layout";
+@use "layout/normalize";
+@use "layout/transitions";
+@use "layout/animations";
+
+@use "common/core";
+@use "common/flex";
+@use "common/grid";
+@use "common/lists";
+@use "common/topbar";
+@use "common/footer";
+@use "common/buttons";
+@use "common/youtube";
+@use "common/visibility";
+
+@use "pages/home";

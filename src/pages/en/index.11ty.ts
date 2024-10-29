@@ -1,5 +1,4 @@
 import { Eleventy } from '../../../types';
-import i18n from '../../_includes/i18n/index.11ty';
 
 export const data = {
   layout: 'base',
@@ -9,6 +8,6 @@ export const data = {
 
 export function render(data: Eleventy): string {
   return `
-    <p>${i18n[data.lang].welcome}</p>
+    <p></p>
   `;
 }

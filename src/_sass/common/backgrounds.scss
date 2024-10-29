@@ -1,0 +1,72 @@
+.wave::after {
+  display: block;
+  content: "";
+  width: 100%;
+  position: relative;
+  top: -2px;
+  height: 200px;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1850 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(47, 73, 94, 1)" d="M 0 48 C 455.5 48 455.5 169 911 169 L 911 169 L 911 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(47, 73, 94, 1)" d="M 910 169 C 1380 169 1380 0 1850 0 L 1850 0 L 1850 0 L 910 0 Z" stroke-width="0"></path> </svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1849px) {
+  .wave::after {
+    background-size: contain;
+  }
+}
+
+.bg-separator {
+  background-repeat: no-repeat;
+  background-image: url("/img/organization.avif");
+  background-size: cover;
+  height: 300px;
+  background-position-y: 80%;
+  @include medium {
+    height: 400px;
+  }
+  @include large {
+    background-position-y: 60%;
+  }
+}
+
+.bg-separator-2 {
+  background-repeat: no-repeat;
+  background-image: url("/img/square-head.avif");
+  background-size: cover;
+  height: 300px;
+  background-position: 50%;
+  background-attachment: fixed;
+  @include medium {
+    height: 400px;
+  }
+}
+
+.bg-separator-3 {
+  background-repeat: no-repeat;
+  background-image: url("/img/agenda.avif");
+  background-size: cover;
+  height: 300px;
+  background-position-y: 40%;
+  @include medium {
+    height: 400px;
+  }
+  @include large {
+    background-position-y: 50%;
+  }
+}
+
+.bg-separator-4 {
+  background-repeat: no-repeat;
+  background-image: url("/img/family-conciliation.avif");
+  background-size: cover;
+  height: 250px;
+  background-position-y: 20%;
+  @include medium {
+    height: 400px;
+  }
+  @include large {
+    height: 500px;
+    background-position-y: 28%;
+  }
+}

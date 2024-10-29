@@ -1,0 +1,8 @@
+// Sizes and rationale copied from https://tailwindcss.com/docs/responsive-design
+
+:root {
+  --breakpoint-small: 640px;
+  --breakpoint-medium: 768px;
+  --breakpoint-large: 1024px;
+  --breakpoint-extra-large: 1280px;
+}

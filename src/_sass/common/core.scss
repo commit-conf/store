@@ -1,0 +1,162 @@
+// Default body styles
+body {
+  color: var(--color-body-fg);
+  background-color: var(--color-body-bg);
+  font-family: var(--body-font);
+  line-height: var(--line-height-normal);
+  font-size: var(--font-size-xl);
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  // Grid Defaults to get images and embeds to work properly
+  max-width: 100%;
+  height: auto;
+
+  // Get rid of gap under images by making them display: inline-block; by default
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a {
+  cursor: pointer;
+  --color-link: var(--color-secondary-bg);
+  color: var(--color-link);
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    --color-link: var(--color-secondary-border);
+  }
+
+  & > img {
+    border: none;
+  }
+}
+
+p {
+  margin: 0 0 var(--margin-6) 0;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-header);
+  font-family: var(--header-font);
+  font-weight: 300;
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--margin-2);
+  margin-top: var(--margin-1);
+
+  // link inside a header is black.
+  // We are still leaving a different color when hovering,
+  // and underline for the color blind
+  & > a {
+    color: inherit;
+  }
+}
+
+h1 {
+  margin-bottom: var(--margin-3);
+  font-size: clamp(var(--font-size-4xl), 5vw, var(--font-size-5xl));
+}
+h2 {
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-4xl));
+}
+h3 {
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-3xl));
+}
+h4 {
+  font-size: clamp(var(--font-size-xl), 5vw, var(--font-size-2xl));
+}
+h5 {
+  margin-bottom: var(--margin-2);
+  font-size: clamp(var(--font-size-l), 5vw, var(--font-size-xl));
+}
+h6 {
+  font-size: var(--font-size-m);
+  font-size: clamp(var(--font-size-m), 5vw, var(--font-size-l));
+}
+// .subheader is to be used under H1 to indicate additional context
+.subheader {
+  color: var(--color-subheader);
+  line-height: var(--line-height-snug);
+  font-family: var(--header-font);
+  font-size: var(--font-size-3xl);
+}
+
+hr {
+  border: solid var(--color-border);
+  border-width: 1px 0 0;
+  clear: both;
+  height: 1px;
+  margin: var(--margin-5) 0 var(--margin-5);
+}
+
+// Typography Defaults
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+/* Abbreviations */
+abbr,
+acronym {
+  text-transform: uppercase;
+  font-size: var(--font-size-m);
+  cursor: help;
+}
+abbr {
+  text-transform: none;
+  &[title] {
+    border-bottom: 1px dotted gray-lighter;
+  }
+}
+
+// Blockquotes
+blockquote {
+  margin: 0 0 var(--margin-4) 0;
+  padding: var(--padding-3) var(--padding-5) 0;
+  border-left: 3px solid var(--color-link);
+  overflow: hidden;
+}
+
+code,
+pre {
+  background-color: var(--color-body-bg);
+  border: 1px solid var(--color-gray-300);
+  color: var(--color-black);
+  font-family: var(--mono-font);
+  font-size: var(--font-size-m);
+  overflow: auto;
+}
+
+code {
+  padding: 2px 5px 1px;
+}
+
+pre {
+  padding: 5px 10px;
+}
+
+.inline {
+  display: inline !important;
+}
+
+// remove the outline for mouse users for onfocus, but keep it for keyboard users
+:focus:not(:focus-visible) {
+  outline: none;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

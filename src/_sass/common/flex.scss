@@ -1,0 +1,92 @@
+/**
+ * Flex utilities
+ */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: var(--breakpoint-medium)) {
+  .flex-row-responsive {
+    display: flex;
+  }
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Grow horizontally
+ */
+.flex-grow {
+  flex-grow: 1;
+}
+
+/**
+ * Do not shrink this element
+ */
+.no-shrink {
+  flex-shrink: 0;
+}
+
+/**
+ * Align items
+ */
+.items-start {
+  align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
+}
+.items-center {
+  align-items: center;
+}
+.items-stretch {
+  align-items: stretch;
+}
+
+/**
+ * Align self
+ */
+.self-start {
+  align-self: flex-start;
+}
+.self-end {
+  align-self: flex-end;
+}
+.self-center {
+  align-self: center;
+}
+.self-stretch {
+  align-self: stretch;
+}
+
+/** wrap */
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+
+/** Justify content */
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: end;
+}
+.justify-between {
+  justify-content: space-between;
+}
+
+/**
+ * Panel that can collapse vertically
+ */
+.collapsible {
+  will-change: height;
+}

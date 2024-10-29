@@ -1,0 +1,75 @@
+.video-link {
+  background-color: var(--color-black);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  border-radius: 1rem;
+
+  &::before {
+    content: ".";
+    display: block;
+    flex-grow: 1;
+  }
+
+  &:hover {
+    .video-play {
+      fill: var(--color-brand-youtube);
+    }
+    .video-img {
+      filter: brightness(1);
+    }
+  }
+}
+
+.video-title {
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: var(--font-size-m);
+  z-index: 1;
+  text-align: center;
+  text-shadow: 0 0 10px rgb(0 0 0 / 90%);
+  margin: 1rem;
+  align-self: stretch;
+  justify-self: stretch;
+  flex-grow: 1;
+
+  // https://stackoverflow.com/questions/3922739/limit-text-length-to-n-lines-using-css
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.video-play {
+  --video-play-size: 50px;
+  --video-play-color: var(--color-gray-600);
+  width: var(--video-play-size);
+  height: var(--video-play-size);
+  max-width: var(--video-play-size);
+  fill: var(--video-play-color);
+  transition: fill var(--transition-duration-1) ease-out;
+  z-index: 1;
+}
+
+.video-img,
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-img {
+  filter: brightness(0.6);
+  transition: filter var(--transition-duration-1) ease-out;
+}
+
+.video-img {
+  border-radius: 1rem;
+}

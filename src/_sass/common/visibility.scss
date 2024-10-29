@@ -1,0 +1,83 @@
+// Hide visually and from screen readers
+.hide {
+  display: none;
+}
+
+// Hide visually and from screen readers, but maintain layout
+.invisible {
+  visibility: hidden;
+}
+
+// show something only in screen readers
+.screen-reader-only {
+  position: absolute;
+  left: -10000px;
+  top: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Small display types */
+@media (min-width: var(--breakpoint-small)) {
+  .small-block {
+    display: block;
+  }
+  .small-flex {
+    display: flex;
+  }
+  .small-hide {
+    display: none;
+  }
+  .small-grid {
+    display: grid;
+  }
+}
+
+/* Medium display types */
+@media (min-width: var(--breakpoint-medium)) {
+  .medium-block {
+    display: block;
+  }
+  .medium-flex {
+    display: flex;
+  }
+  .medium-hide {
+    display: none;
+  }
+  .medium-grid {
+    display: grid;
+  }
+}
+
+/* Large display types */
+@media (min-width: var(--breakpoint-large)) {
+  .large-block {
+    display: block;
+  }
+  .large-flex {
+    display: flex;
+  }
+  .large-hide {
+    display: none;
+  }
+  .large-grid {
+    display: grid;
+  }
+}
+
+/* Extra-large display types */
+@media (min-width: var(--breakpoint-extra-large)) {
+  .extra-large-block {
+    display: block;
+  }
+  .extra-large-flex {
+    display: flex;
+  }
+  .extra-large-hide {
+    display: none;
+  }
+  .extra-large-grid {
+    display: grid;
+  }
+}
