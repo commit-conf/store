@@ -3,7 +3,7 @@ import React from "react";
 import site from "../../_data/site";
 import { getI18n } from "../i18n/index.11ty";
 
-export default function ({ lang }: Eleventy) {
+export default function Footer({ lang }: Eleventy) {
   const i18n = getI18n(lang);
   const links = [
     {

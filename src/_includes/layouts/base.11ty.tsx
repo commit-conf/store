@@ -2,10 +2,12 @@ import { Eleventy } from "../../../types";
 import React from "react";
 import site from "../../_data/site";
 import { getI18n } from "../i18n/index.11ty";
-import topbar from "../components/topbar.11ty";
-import footer from "../components/footer.11ty";
+import Footer from "../components/footer.11ty";
+import Topbar from "../components/topbar.11ty";
 
-export default function render(data: Eleventy) {
+interface LayoutData extends Eleventy, React.PropsWithChildren {}
+
+export default function Layout(data: LayoutData) {
   const { lang, assets, title, content } = data;
   const i18n = getI18n(lang);
   const unsafeInline = site.environment == "dev" ? "unsafe-inline" : "";
@@ -21,7 +23,7 @@ export default function render(data: Eleventy) {
         />
 
         <link rel="stylesheet" href={assets.css} />
-        <title>title</title>
+        <title>{title}</title>
         <meta name="author" content="Carlos Coloma" />
         <meta name="description" content={i18n.metaDescription} />
 
@@ -69,10 +71,10 @@ export default function render(data: Eleventy) {
       </head>
       <body>
         <div>
-          {topbar(data)}
-          <div dangerouslySetInnerHTML={{ __html: content }}></div>
+          <Topbar {...data} />
+          {data.children}
         </div>
-        {footer(data)}
+        <Footer {...data} />
       </body>
     </html>
   );

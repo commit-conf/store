@@ -2,7 +2,7 @@ import React from "react";
 import { Eleventy } from "../../../types";
 import { getI18n } from "../i18n/index.11ty";
 
-export default function render(data: Eleventy) {
+export default function Topbar(data: Eleventy) {
   const i18n = getI18n(data.lang);
   const navigationItems = [
     {
@@ -15,7 +15,7 @@ export default function render(data: Eleventy) {
           url: data.page.url.replace("/en/", "/es/"),
         }
       : {
-          name: "English",
+          name: "Englishss",
           url:
             data.page.url == "/"
               ? "/en"

@@ -1,12 +1,11 @@
 import { Eleventy } from "../../../types";
 import React from "react";
-
-export const data = {
-  layout: "base",
-  title: "Home Page",
-  lang: "en",
-};
+import Layout from "../../_includes/layouts/base.11ty";
 
 export function render(data: Eleventy) {
-  return <p></p>;
+  return (
+    <Layout {...data} lang="en" title="Home page">
+      <p>Hello world 23</p>
+    </Layout>
+  );
 }
