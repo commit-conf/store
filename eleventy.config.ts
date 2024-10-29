@@ -1,19 +1,21 @@
+import {renderToStaticMarkup} from "react-dom/server";
 
+// maybe you want to take a look to https://bennypowers.dev/posts/typescript-11ty-config/
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default function (eleventyConfig) {
 
-  eleventyConfig.addTemplateFormats("11ty.ts");
+  eleventyConfig.addTemplateFormats("11ty.ts,11ty.tsx");
 
   // We can add support for JSX too, at the same time:
-  eleventyConfig.addExtension(["11ty.ts", ".ts"], {
-    key: "11ty.js",
-    compile: function () {
-      return async function (data) {
-        let content = await this.defaultRenderer(data);
-        return content;
-      };
-    },
-  });
+  eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
+		key: "11ty.js",
+		compile: function () {
+			return async function (data) {
+				const content = await this.defaultRenderer(data);
+        return '<!DOCTYPE html>' + renderToStaticMarkup(content);
+			};
+		},
+	});
 
   // so we can recompile the client js with webpack before
   eleventyConfig.setWatchThrottleWaitTime(1000); // in milliseconds

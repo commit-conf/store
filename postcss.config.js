@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
     // Remove unused CSS
     purgecss({
-      content: ["./src/**/*.njk", "./src/**/*.ts"],
+      content: ["./src/**/*.njk", "./src/**/*.ts", "./src/**/*.tsx"],
       variables: true,
     }),
     autoprefixer,
