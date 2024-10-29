@@ -14,7 +14,7 @@
     "watch:js": "NODE_ENV=development npx webpack --config webpack.config.ts --watch",
     "watch:eleventy": "sleep 1 && ENV=development npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --serve",
     "watch": "npm run clean && npm run build:sass && npm-run-all -p watch:sass watch:js watch:eleventy",
-    "debug": "DEBUG=* npx @11ty/eleventy --formats=11ty.ts,11ty.tsx --serve"
+    "debug": "DEBUG=* npm run watch"
   },
   "keywords": [],
   "author": "",
