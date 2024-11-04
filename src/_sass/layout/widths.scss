@@ -6,13 +6,21 @@
   width: calc(min(100%, 25rem));
 }
 
-@media (min-width: var(--breakpoint-medium)) {
+.max-width-1280 {
+  max-width: 1280px;
+}
+
+.width-30 {
+  width: calc(clamp(15rem, 30vw, 25rem));
+}
+
+@media (min-width: 768px) {
   .medium-width-70 {
     width: 70%;
   }
 }
 
-@media (min-width: var(--breakpoint-large)) {
+@media (min-width: 1024px) {
   .large-width-50 {
     width: 50%;
   }

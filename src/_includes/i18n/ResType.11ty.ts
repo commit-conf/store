@@ -10,4 +10,21 @@ export interface ResType {
   TermsAndConditions: string;
   CodeOfConduct: string;
   TheTeam: string;
+  Catalogue: string;
+  White: string;
+  TShirt2025: string;
+  TShirt2025Description: string;
+  '100%Cotton': string;
+  StickersPack: string;
+  StickersPackDescription: string;
+  ProductInfo: string;
+  Material: string;
+  Color: string;
+  Sizes: string;
+  Price: string;
+  OrderNow: string;
+  Dimensions: string;
+  SiteDescription: string;
+  GoToTheEventPage: string;
+  TaxIncluded: string;
 }

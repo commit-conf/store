@@ -34,7 +34,7 @@ section + section > .section-center,
   padding-top: var(--padding-2);
 }
 
-@media (min-width: var(--breakpoint-medium)) {
+@media (min-width: 768px) {
   // add .limited to set a maximum body width
   .limited-large {
     max-width: var(--width-large);

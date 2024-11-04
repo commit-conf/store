@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: row;
 }
-@media (min-width: var(--breakpoint-medium)) {
+@media (min-width: 768px) {
   .flex-row-responsive {
     display: flex;
   }

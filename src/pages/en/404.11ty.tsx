@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../../_includes/layouts/base.11ty";
 import { Eleventy } from "../../../types";
+import BasicLayoutView from "../../_includes/layouts/BasicLayoutView.11ty";
 
 export const data = {
   permalink: "404.html",
@@ -8,7 +8,7 @@ export const data = {
 
 export function render(data: Eleventy) {
   return (
-    <Layout {...data} lang="en" title="Page not found">
+    <BasicLayoutView {...data} lang="en" title="Page not found">
       <section className="content limited-large">
         <h1 className="text-center">Page not found</h1>
         <p className="text-center">
@@ -258,6 +258,6 @@ main = putStrLn "Hello, World!"`,
           </div>
         </div>
       </section>
-    </Layout>
+    </BasicLayoutView>
   );
 }

@@ -8,6 +8,10 @@
   visibility: hidden;
 }
 
+.block {
+  display: block;
+}
+
 // show something only in screen readers
 .screen-reader-only {
   position: absolute;
@@ -19,7 +23,7 @@
 }
 
 /* Small display types */
-@media (min-width: var(--breakpoint-small)) {
+@media (min-width: 640px) {
   .small-block {
     display: block;
   }
@@ -35,7 +39,7 @@
 }
 
 /* Medium display types */
-@media (min-width: var(--breakpoint-medium)) {
+@media (min-width: 768px) {
   .medium-block {
     display: block;
   }
@@ -51,7 +55,7 @@
 }
 
 /* Large display types */
-@media (min-width: var(--breakpoint-large)) {
+@media (min-width: 1024px) {
   .large-block {
     display: block;
   }
@@ -67,7 +71,7 @@
 }
 
 /* Extra-large display types */
-@media (min-width: var(--breakpoint-extra-large)) {
+@media (min-width: 1280px) {
   .extra-large-block {
     display: block;
   }

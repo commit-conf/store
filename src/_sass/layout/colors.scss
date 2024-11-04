@@ -249,10 +249,10 @@
   --color-primary-fg: white;
   --color-primary-border: #6ead0f;
   --color-primary-border-darker: #598d0c;
-  --color-secondary-bg: #0084db;
-  --color-secondary-border: #0073c1;
-  --color-secondary-border-darker: #0363a3;
-  --color-secondary-fg: var(--color-white);
+  --color-secondary-bg: var(--color-yellow-300);
+  --color-secondary-border: var(--color-yellow-500);
+  --color-secondary-border-darker: var(--color-yellow-400);
+  --color-secondary-fg: var(--color-gray-900);
   --color-tertiary-bg: #a30062;
   --color-tertiary-border: #940159;
   --color-tertiary-border-darker: #770148;

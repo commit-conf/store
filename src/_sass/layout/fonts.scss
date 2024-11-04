@@ -78,10 +78,8 @@
 // small font, will use gray color
 small,
 .small {
-  --small-font-color: var(--color-gray-700);
   font-size: var(--font-size-l); // one less than body default
   line-height: inherit;
-  color: var(--small-font-color);
   font-weight: bold;
 }
 
@@ -99,12 +97,24 @@ small,
   font-weight: normal;
 }
 
+.font-weight-bold {
+  font-weight: bold;
+}
+
 .font-family-normal {
   font-family: var(--body-font);
 }
 
 .font-size-normal {
   font-size: var(--font-size-l);
+}
+
+.font-size-eighty-percent {
+  font-size: 80%;
+}
+
+.font-size-m {
+  font-size: var(--font-size-m);
 }
 
 .font-size-l {
@@ -134,4 +144,17 @@ small,
 .font-warn {
   color: var(--color-red-600);
   font-weight: bold;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.text-muted {
+  --muted-font-color: var(--color-neutral-500);
+  color: var(--muted-font-color);
+}
+
+.text-color-default {
+  color: var(--color-body-fg);
 }

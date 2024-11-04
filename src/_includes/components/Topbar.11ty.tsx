@@ -15,7 +15,7 @@ export default function Topbar(data: Eleventy) {
           url: data.page.url.replace("/en/", "/es/"),
         }
       : {
-          name: "Englishss",
+          name: "English",
           url:
             data.page.url == "/"
               ? "/en"

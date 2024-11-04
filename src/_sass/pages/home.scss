@@ -1,5 +1,5 @@
 .hero {
-  --hero-min-height: calc(100vh - 11.7rem);
+  --hero-min-height: calc(100vh - 24rem);
   --hero-button-font-size: calc(
     clamp(var(--font-size-xl), 2vw, var(--font-size-3xl))
   );
@@ -13,8 +13,12 @@
   align-items: center;
   min-height: var(--hero-min-height);
   z-index: 1;
-  background-color: var(--color-lime-400);
+  background-color: var(--color-stone-100);
   position: relative;
+}
+
+.hero-text {
+  max-width: 70%;
 }
 
 .hero-image {
@@ -57,19 +61,30 @@
   }
 }
 
+.product {
+  aspect-ratio: 11 / 14;
+  & > img {
+    max-width: calc(min(100%, 30rem));
+  }
+}
+
+.aspect-4-4 {
+  aspect-ratio: 4 / 4;
+}
+
+img.cover {
+  object-fit: cover;
+}
+
 @media (min-width: 768px) {
   .hero {
-    --hero-min-height: calc(100vh - 9.7rem);
+    --hero-min-height: calc(100vh - 20rem);
   }
   .hero-actions {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: var(--gap-4);
-  }
-
-  p {
-    font-size: var(--font-size-2xl);
   }
 }
 

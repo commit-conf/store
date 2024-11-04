@@ -1,15 +1,34 @@
 import { ResType } from "./ResType.11ty";
 
-export default {
-  "metaDescription": "Commit is the event that brings together the IT communities in Spain for two days.",
-  "skipToContent": "Skip to content",
-  "goHome": "Go home",
-  "Contact": "Contact",
-  "Links": "Links",
-  "AboutUs": "About us",
-  "TheEvent": "The event",
-  "PrivacyPolicy": "Privacy policy",
-  "TermsAndConditions": "Terms and conditions",
-  "CodeOfConduct": "Code of conduct",
-  "TheTeam": "The team",
-} as ResType
+export const en: ResType = {
+  metaDescription: "Commit is the event that brings together the IT communities in Spain for two days. And this is its store.",
+  skipToContent: "Skip to content",
+  goHome: "Go home",
+  Contact: "Contact",
+  Links: "Links",
+  AboutUs: "About us",
+  TheEvent: "The event",
+  PrivacyPolicy: "Privacy policy",
+  TermsAndConditions: "Terms and conditions",
+  CodeOfConduct: "Code of conduct",
+  TheTeam: "The team",
+  Catalogue: "For you and your vibes",
+  White: "White",
+  TShirt2025: "T-shirt 2025",
+  TShirt2025Description: "The official Commit Conf T-shirt for 2025. Perfect for your next event—or for the fun of watching others try to figure it out.",
+  '100%Cotton': "100% cotton",
+  StickersPack: "Stickers pack",
+  StickersPackDescription: "A pack of awesome stickers for your laptop. Flaunt your geek pride and you'll be the envy of the office.",
+  ProductInfo: "Product info",
+  Material: "Material",
+  Color: "Color",
+  Sizes: "Sizes",
+  Price: "Price",
+  OrderNow: "Order now",
+  Dimensions: "Dimensions",
+  SiteDescription: "Tech exclusives you won\'t find on Amazon or AliExpress.",
+  GoToTheEventPage: "Go to the event page",
+  TaxIncluded: "Tax included",
+}
+
+export default en;

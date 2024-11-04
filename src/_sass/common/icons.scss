@@ -1,0 +1,25 @@
+.icon {
+  --icon-size: 1.5rem;
+  --margin-size: var(--margin-3);
+  vertical-align: text-bottom !important; // react-icons use vertical-align: middle in style attr
+  height: var(--icon-size);
+  width: var(--icon-size);
+  max-width: var(--icon-size);
+  flex-shrink: 0; // do not reduce when used in a flex container
+  color: inherit; // use same color as the container (e.g. link color)
+
+  &.large {
+    --icon-size: 2rem;
+    --margin-size: var(--margin-4);
+    padding: var(--padding-1);
+  }
+
+  &.small {
+    --icon-size: 1rem;
+    --margin-size: var(--margin-2);
+  }
+}
+
+.button > .icon {
+  margin-right: var(--margin-size);
+}

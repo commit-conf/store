@@ -7,7 +7,10 @@
   color: var(--button-fg-color);
   padding: var(--padding-4) var(--padding-8);
   border-radius: var(--border-radius);
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   text-decoration: none;
   border-width: var(--border-width-1);
   border-style: solid;
@@ -33,9 +36,8 @@
     --button-fg-color: var(--color-secondary-fg);
     --button-bg-color: var(--color-secondary-bg);
     --button-border-color: var(--color-secondary-border);
-    small,
-    .small {
-      --small-font-color: var(--color-secondary-fg);
+    .text-muted {
+      --muted-font-color: var(--color-secondary-fg);
     }
     &:hover,
     &:focus,

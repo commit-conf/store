@@ -21,13 +21,13 @@ img {
 
 a {
   cursor: pointer;
-  --color-link: var(--color-secondary-bg);
+  --color-link: #0084db;
   color: var(--color-link);
   text-decoration: underline;
 
   &:hover,
   &:focus {
-    --color-link: var(--color-secondary-border);
+    --color-link: #0073c1;
   }
 
   & > img {
