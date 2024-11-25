@@ -33,3 +33,7 @@
 .border-radius-m {
   border-radius: var(--border-radius-m);
 }
+
+.border-radius-top-m {
+  border-radius: var(--border-radius-m) var(--border-radius-m) 0 0;
+}

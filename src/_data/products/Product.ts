@@ -6,14 +6,27 @@ interface BaseProduct {
   description: I18nEntry;
   price: number;
   images: string[];
+}
+
+interface TShirtSizeDetails {
+  width: string;
+  height: string;
+}
+
+export interface TShirtSize {
+  [size: string]: TShirtSizeDetails;
+}
+
+interface TShirtVariants {
+  type: 'male' | 'female';
+  sizes: TShirtSize;
   stripeURL: string;
 }
 
 export interface TShirt extends BaseProduct {
-  sizes: string[];
+  variants: TShirtVariants[];
   color: I18nEntry;
   material: I18nEntry;
-  sizeGuideHtml: string;
 }
 
 export interface Sticker {
@@ -24,6 +37,7 @@ export interface Sticker {
 
 export interface StickersPack extends BaseProduct {
   stickers: Sticker[];
+  stripeURL: string;
 }
 
 type Product = TShirt | StickersPack;

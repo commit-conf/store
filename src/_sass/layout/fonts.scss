@@ -16,6 +16,7 @@
   --line-height-8: 2rem;
   --line-height-9: 2.25rem;
   --line-height-10: 2.5rem;
+  --line-height-11: 2.75rem;
 
   // --- Font sizes ---
   --font-size-xs: 0.75rem;
@@ -157,4 +158,8 @@ small,
 
 .text-color-default {
   color: var(--color-body-fg);
+}
+
+.line-height-11 {
+  line-height: var(--line-height-11);
 }

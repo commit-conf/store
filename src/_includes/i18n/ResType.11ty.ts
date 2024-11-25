@@ -27,4 +27,13 @@ export interface ResType {
   SiteDescription: string;
   GoToTheEventPage: string;
   TaxIncluded: string;
+  Width: string;
+  Height: string;
+  Type: string;
+  Male: string;
+  Female: string;
+  SizeDetails: string;
+  NoShipping: string;
+  Continue: string;
+  Cancel: string;
 }

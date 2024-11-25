@@ -14,6 +14,7 @@
 @use "common/flex";
 @use "common/grid";
 @use "common/icons";
+@use "common/table";
 @use "common/lists";
 @use "common/topbar";
 @use "common/footer";
@@ -21,5 +22,6 @@
 @use "common/youtube";
 @use "common/backgrounds";
 @use "common/visibility";
+@use "common/messages";
 
 @use "pages/home";

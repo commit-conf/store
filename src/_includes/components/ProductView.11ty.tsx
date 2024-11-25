@@ -1,27 +1,88 @@
 import React from "react";
-import Product, { StickersPack, TShirt } from "../../_data/products/Product";
+import Product from "../../_data/products/Product";
 import { I18nContext } from "../i18n/index.11ty";
 import { printPrice } from "../utils/price";
 
 interface ProductInfoItemProps {
   label: string;
-  value?: string;
+  value?: string | JSX.Element;
 }
 
-function ProductInfoItem({ label, value }: ProductInfoItemProps) {
+export function ProductInfoItem({ label, value }: ProductInfoItemProps) {
   return !value ? undefined : (
     <div>
       <span className="font-weight-bold">{label}</span>
-      <p>{value}</p>
+      <div className="margin-top-2 line-height-11">{value}</div>
+    </div>
+  );
+}
+
+interface PurchaseButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  href: string;
+}
+
+export function PurchaseButton({
+  className = "",
+  href,
+  ...rest
+}: PurchaseButtonProps) {
+  const { i18n } = React.useContext(I18nContext);
+  return (
+    <div aria-live="assertive" aria-relevant="additions">
+      <button
+        className={
+          "purchase-button button primary text-center no-margin " + className
+        }
+        {...rest}
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          height="200px"
+          width="200px"
+          xmlns="http://www.w3.org/2000/svg"
+          className="icon"
+        >
+          <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+          <path d="M10 17h-4v-14h-2"></path>
+          <path d="M6 5l14 1l-.717 5.016m-7.783 1.984h-5.5"></path>
+          <path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"></path>
+        </svg>
+        {i18n.OrderNow}
+      </button>
+      <div className="purchase-confirmation hide">
+        <p className="text-muted message warning">{i18n.NoShipping}</p>
+        <div className="flex-row gap-1">
+          <a href={href} className="button primary text-center no-margin">
+            {i18n.Continue}
+          </a>
+          <button className="purchase-cancel button tertiary text-center no-margin">
+            {i18n.Cancel}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
 
 interface ProductViewProps {
   product: Product;
+  details: JSX.Element;
+  form: JSX.Element;
 }
 
-export default function ProductView({ product }: ProductViewProps) {
+const DEFAULT_GENDER = "male";
+
+export default function ProductView({
+  product,
+  details,
+  form,
+}: ProductViewProps) {
   const { i18n, lang } = React.useContext(I18nContext);
   // TODO carrousel?
   return (
@@ -39,24 +100,7 @@ export default function ProductView({ product }: ProductViewProps) {
             <p className="">{i18n.ProductInfo}</p>
           </h3>
           <div role="region" className="flex-row flex-wrap gap-2">
-            <ProductInfoItem
-              label={i18n.Color}
-              value={i18n[(product as TShirt).color]}
-            />
-            <ProductInfoItem
-              label={i18n.Material}
-              value={i18n[(product as TShirt).material]}
-            />
-            <ProductInfoItem
-              label={i18n.Sizes}
-              value={(product as TShirt).sizes?.join(", ")}
-            />
-            <ProductInfoItem
-              label={i18n.Dimensions}
-              value={(product as StickersPack).stickers
-                ?.map(({ dimensions }) => dimensions)
-                .join(" | ")}
-            />
+            {details}
           </div>
         </div>
       </div>
@@ -75,29 +119,7 @@ export default function ProductView({ product }: ProductViewProps) {
               ({i18n.TaxIncluded})
             </small>
           </p>
-          <a
-            className="button primary text-center no-margin"
-            href={product.stripeURL}
-          >
-            <svg
-              stroke="currentColor"
-              fill="none"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              height="200px"
-              width="200px"
-              xmlns="http://www.w3.org/2000/svg"
-              className="icon"
-            >
-              <path d="M4 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-              <path d="M10 17h-4v-14h-2"></path>
-              <path d="M6 5l14 1l-.717 5.016m-7.783 1.984h-5.5"></path>
-              <path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"></path>
-            </svg>
-            {i18n.OrderNow}
-          </a>
+          <div className="flex-column">{form}</div>
         </div>
       </div>
     </div>

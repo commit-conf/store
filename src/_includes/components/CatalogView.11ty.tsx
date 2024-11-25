@@ -24,7 +24,7 @@ function ProductItemView({ product }: ProductItemViewProps) {
             draggable="false"
             loading="lazy"
             decoding="async"
-            className="aspect-4-4 cover border-radius-m"
+            className="aspect-4-4 cover border-radius-top-m"
             aria-description={i18n[product.description]}
             title={i18n[product.description]}
             src={`/img/products/${product.images[0]}`}

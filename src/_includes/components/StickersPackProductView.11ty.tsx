@@ -1,0 +1,31 @@
+import React from "react";
+import { StickersPack } from "../../_data/products/Product";
+import ProductView, {
+  ProductInfoItem,
+  PurchaseButton,
+} from "./ProductView.11ty";
+import { I18nContext } from "../i18n/index.11ty";
+
+interface StickersPackProductViewProps {
+  stickersPack: StickersPack;
+}
+
+export default function StickersPackProductView({
+  stickersPack,
+}: StickersPackProductViewProps) {
+  const { i18n } = React.useContext(I18nContext);
+  return (
+    <ProductView
+      product={stickersPack}
+      details={
+        <ProductInfoItem
+          label={i18n.Dimensions}
+          value={stickersPack.stickers
+            .map(({ dimensions }) => dimensions)
+            .join(" | ")}
+        />
+      }
+      form={<PurchaseButton href={stickersPack.stripeURL} />}
+    />
+  );
+}

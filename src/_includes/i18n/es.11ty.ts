@@ -29,6 +29,15 @@ export const es: ResType = {
   SiteDescription: "Cosas tech y exclusivas que no verás en Amazon ni en AliExpress.",
   GoToTheEventPage: "Ir a la página del evento",
   TaxIncluded: "Impuestos incluidos",
+  Width: "Ancho",
+  Height: "Alto",
+  Type: 'Tipo',
+  Male: 'Hombre',
+  Female: 'Mujer',
+  SizeDetails: 'Detalles',
+  NoShipping: 'No se hacen envíos a domicilio. Tendrás que recogerlo en el evento.',
+  Continue: 'Continuar',
+  Cancel: 'Cancelar'
 }
 
 export default es;

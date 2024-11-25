@@ -1,0 +1,6 @@
+.table {
+  border-spacing: clamp(var(--margin-2), 2.5vw, var(--margin-4))
+    clamp(var(--margin-1), 1vw, var(--margin-2));
+  // caclulate border-spacing using viewport with a min of margin-2 margin-1 and a max of margin-4 margin-2
+  font-size: clamp(68%, 2vw, 80%);
+}

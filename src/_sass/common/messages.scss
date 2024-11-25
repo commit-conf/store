@@ -1,0 +1,14 @@
+.message {
+  padding: var(--padding-4) var(--padding-8);
+  margin-bottom: var(--margin-4);
+  color: var(--color-body-fg);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.8);
+  max-height: 1000px;
+
+  &.warning {
+    background-color: var(--color-orange-200);
+    border-left: var(--border-radius-m) solid var(--color-orange-500);
+  }
+}
