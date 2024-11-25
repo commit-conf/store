@@ -82,8 +82,8 @@ function Buttons({ tshirt }: TShirtProductViewProps) {
             id="switch"
             className="padding-4 padding-vertical-2 margin-bottom"
           >
-            <option value="female">{i18n.Female}</option>
             <option value="male">{i18n.Male}</option>
+            <option value="female">{i18n.Female}</option>
           </select>
         }
       />

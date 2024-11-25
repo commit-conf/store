@@ -17,8 +17,9 @@
   position: relative;
 }
 
-.hero-text {
+.hero-text-container {
   max-width: 70%;
+  z-index: 1;
 }
 
 .hero-image {
@@ -31,20 +32,17 @@
   filter: brightness(0.5);
 }
 
-.hero-text {
-  z-index: 1;
-}
-
 .hero-logo {
   width: calc(max(50%, 20rem));
 }
 
-.hero-subtitle {
+.hero-text {
   font-size: var(--hero-subtitle-size);
   color: var(--color-white);
-  margin-top: 1vw;
-  margin-bottom: 0;
   text-shadow: var(--hero-shadow);
+  line-height: var(--line-height-tight);
+  font-weight: 300;
+  font-family: var(--header-font);
 }
 
 .hero-actions {

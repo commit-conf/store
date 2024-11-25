@@ -7,10 +7,17 @@ export function Hero({}: Eleventy) {
   const { i18n } = useContext(I18nContext);
   return (
     <div className="flex-column items-center justify-center hero">
-      <div className="text-center hero-text flex-column gap-2">
+      <img className="hero-image" src="/img/hero.avif" aria-hidden></img>
+      <div className="text-center hero-text-container flex-column gap-2">
         <span>
-          <h1 className="">{site.name}</h1>
-          <h2 className="font-size-2xl">{i18n.SiteDescription}</h2>
+          <img
+            title="Commit Conference Logo"
+            className="hero-logo margin-bottom"
+            src="/svg/wlogo.svg"
+          />
+          <p className="font-size-2xl hero-text no-margin">
+            {i18n.SiteDescription}
+          </p>
         </span>
         <div className="flex-row justify-center">
           <a
