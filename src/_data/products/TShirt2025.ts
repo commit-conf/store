@@ -19,7 +19,7 @@ const TShirt2025: TShirt = {
       '3XL': { width: "66cm", height: "79cm" },
       '4XL': { width: "70cm", height: "81cm" },
     },
-    stripeURL: "https://buy.stripe.com/test_male"
+    stripeURL: "https://book.stripe.com/test_5kAeXT51raTV2mA288"
   }, {
     type: 'female',
     sizes: {
@@ -30,7 +30,7 @@ const TShirt2025: TShirt = {
       '2XL': { width: "54cm", height: "69cm" },
       '3XL': { width: "57cm", height: "70cm" },
     },
-    stripeURL: "https://buy.stripe.com/test_female"
+    stripeURL: "https://book.stripe.com/test_fZecPL3XnaTV5yM001"
   }]
 }
 

@@ -6,7 +6,7 @@ const sticketrsPack: StickersPack = {
   description: 'StickersPackDescription',
   price: 6,
   images: ['stickers-pack-1.avif'],
-  stripeURL: "https://buy.stripe.com/test_9AQc3v7kUc3e5aE00z",
+  stripeURL: "https://book.stripe.com/test_4gw8zvbpP3rt5yMcMO",
   stickers: [{
     description: 'This machine has no brain. Please use your own.',
     image: 'no-brain-sticker.jpg',

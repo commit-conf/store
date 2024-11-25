@@ -58,7 +58,11 @@ export function PurchaseButton({
       <div className="purchase-confirmation hide">
         <p className="text-muted message warning">{i18n.NoShipping}</p>
         <div className="flex-row gap-1">
-          <a href={href} className="button primary text-center no-margin">
+          <a
+            href={href}
+            className="button primary text-center no-margin"
+            target="_blank"
+          >
             {i18n.Continue}
           </a>
           <button className="purchase-cancel button tertiary text-center no-margin">
@@ -75,8 +79,6 @@ interface ProductViewProps {
   details: JSX.Element;
   form: JSX.Element;
 }
-
-const DEFAULT_GENDER = "male";
 
 export default function ProductView({
   product,
