@@ -12,7 +12,7 @@ export function ProductInfoItem({ label, value }: ProductInfoItemProps) {
   return !value ? undefined : (
     <div>
       <span className="font-weight-bold">{label}</span>
-      <div className="margin-top-2 line-height-11">{value}</div>
+      <div>{value}</div>
     </div>
   );
 }
@@ -98,10 +98,7 @@ export default function ProductView({
           <p className="">{i18n[product.description]}</p>
         </div>
         <div className="">
-          <h3 className="">
-            <p className="">{i18n.ProductInfo}</p>
-          </h3>
-          <div role="region" className="flex-row flex-wrap gap-2">
+          <div role="region" className="flex-column flex-wrap gap-1">
             {details}
           </div>
         </div>

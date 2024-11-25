@@ -15,7 +15,7 @@ const DEFAULT_TYPE = "male";
 function TShirtDetails({ tshirt }: TShirtProductViewProps) {
   const { i18n } = React.useContext(I18nContext);
   return (
-    <div role="region" className="flex-row flex-wrap gap-2">
+    <>
       <ProductInfoItem label={i18n.Color} value={i18n[tshirt.color]} />
       <ProductInfoItem label={i18n.Material} value={i18n[tshirt.material]} />
 
@@ -23,53 +23,50 @@ function TShirtDetails({ tshirt }: TShirtProductViewProps) {
         <div
           key={value.type}
           data-switch={value.type}
-          className={
-            "collapsible-container wide" +
-            (value.type == DEFAULT_TYPE ? "" : " hide")
-          }
+          className={"wide" + (value.type == DEFAULT_TYPE ? "" : " hide")}
         >
           <ProductInfoItem
             label={i18n.Sizes}
             value={
-              <span>
-                {Object.keys(value.sizes).join(", ")}{" "}
-                <a className="collapsible small">{i18n.SizeDetails}</a>
-              </span>
+              <div className="wide flex-column">
+                <table className="table margin-bottom">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      {Object.keys(value.sizes).map((size) => (
+                        <th key={size}>{size}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{i18n.Width}</td>
+                      {Object.entries(value.sizes).map(
+                        ([size, { width, height }]) => (
+                          <td key={size} className="text-center">
+                            {width}
+                          </td>
+                        )
+                      )}
+                    </tr>
+                    <tr>
+                      <td>{i18n.Height}</td>
+                      {Object.entries(value.sizes).map(
+                        ([size, { width, height }]) => (
+                          <td key={size} className="text-center">
+                            {height}
+                          </td>
+                        )
+                      )}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             }
           />
-          <div className="wide collapsible-content flex-column items-center hide">
-            <table className="table margin-bottom">
-              <thead>
-                <tr>
-                  <th></th>
-                  {Object.keys(value.sizes).map((size) => (
-                    <th key={size}>{size}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{i18n.Width}</td>
-                  {Object.entries(value.sizes).map(
-                    ([size, { width, height }]) => (
-                      <td key={size}>{width}</td>
-                    )
-                  )}
-                </tr>
-                <tr>
-                  <td>{i18n.Height}</td>
-                  {Object.entries(value.sizes).map(
-                    ([size, { width, height }]) => (
-                      <td key={size}>{height}</td>
-                    )
-                  )}
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }
 

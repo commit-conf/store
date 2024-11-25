@@ -19,7 +19,6 @@ export const es: ResType = {
   "100%Cotton": "100% algodón",
   StickersPack: "Pack de pegatinas",
   StickersPackDescription: "Un pack de increíbles pegatinas para tu portátil. Saca tu lado geek y sé la envidia de la oficina.",
-  ProductInfo: "Información del producto",
   Material: "Material",
   Color: "Color",
   Sizes: "Tallas",
@@ -34,7 +33,6 @@ export const es: ResType = {
   Type: 'Tipo',
   Male: 'Hombre',
   Female: 'Mujer',
-  SizeDetails: 'Detalles',
   NoShipping: 'No se hacen envíos a domicilio. Tendrás que recogerlo en el evento.',
   Continue: 'Continuar',
   Cancel: 'Cancelar'

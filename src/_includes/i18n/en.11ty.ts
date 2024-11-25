@@ -19,7 +19,6 @@ export const en: ResType = {
   '100%Cotton': "100% cotton",
   StickersPack: "Stickers pack",
   StickersPackDescription: "A pack of awesome stickers for your laptop. Flaunt your geek pride and you'll be the envy of the office.",
-  ProductInfo: "Product info",
   Material: "Material",
   Color: "Color",
   Sizes: "Sizes",
@@ -34,7 +33,6 @@ export const en: ResType = {
   Type: 'Type',
   Male: 'Male',
   Female: 'Female',
-  SizeDetails: 'Details',
   NoShipping: 'No shipping. You can pick up your order at the event.',
   Continue: 'Continue',
   Cancel: 'Cancel'

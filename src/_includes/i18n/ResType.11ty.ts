@@ -17,7 +17,6 @@ export interface ResType {
   '100%Cotton': string;
   StickersPack: string;
   StickersPackDescription: string;
-  ProductInfo: string;
   Material: string;
   Color: string;
   Sizes: string;
@@ -32,7 +31,6 @@ export interface ResType {
   Type: string;
   Male: string;
   Female: string;
-  SizeDetails: string;
   NoShipping: string;
   Continue: string;
   Cancel: string;
