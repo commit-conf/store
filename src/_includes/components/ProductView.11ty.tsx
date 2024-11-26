@@ -18,7 +18,10 @@ export function ProductInfoItem({ label, value }: ProductInfoItemProps) {
 }
 
 interface PurchaseButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
   href: string;
 }
 
@@ -29,12 +32,14 @@ export function PurchaseButton({
 }: PurchaseButtonProps) {
   const { i18n } = React.useContext(I18nContext);
   return (
-    <div aria-live="assertive" aria-relevant="additions">
+    <div
+      aria-live="assertive"
+      aria-relevant="additions"
+      {...rest}
+      className={className}
+    >
       <button
-        className={
-          "purchase-button button primary text-center no-margin " + className
-        }
-        {...rest}
+        className={"purchase-button button primary text-center no-margin "}
       >
         <svg
           stroke="currentColor"
@@ -57,7 +62,7 @@ export function PurchaseButton({
       </button>
       <div className="purchase-confirmation hide">
         <p className="text-muted message warning">{i18n.NoShipping}</p>
-        <div className="flex-row gap-1">
+        <div className="flex-row gap-1 flex-wrap">
           <a
             href={href}
             className="button primary text-center no-margin"
