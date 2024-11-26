@@ -10,7 +10,7 @@
     "build:eleventy": "npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
     "build": "npm run clean; npm-run-all build:sass build:js build:eleventy",
     "===": "========== Watch ===========",
-    "watch:sass": "inotifywait -m -r -e close_write,create,delete src/_sass/ | while read NEWFILE; do npm run build:sass && cp .build/src/_data/*.css _site/css/; done",
+    "watch:sass": "inotifywait -m -r -e close_write,create,delete src/_sass/ | while read NEWFILE; do npm run build:sass && cp css/*.css _site/css/; done",
     "watch:js": "NODE_ENV=development npx webpack --config webpack.config.ts --watch",
     "watch:eleventy": "sleep 2 && ENV=development npx tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts --serve",
     "watch": "npm run clean && npm run build:sass && npm-run-all -p watch:sass watch:js watch:eleventy",
