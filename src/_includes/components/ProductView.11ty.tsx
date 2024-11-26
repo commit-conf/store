@@ -93,19 +93,15 @@ export default function ProductView({
   const { i18n, lang } = React.useContext(I18nContext);
   // TODO carrousel?
   return (
-    <div className="flex-row gap-2 margin-top margin-bottom block medium-flex">
-      <div className="">
-        <div className="">
-          <a className="small" href={`/${lang}`}>
-            &lt; {i18n.goHome}
-          </a>
-          <h2 className="">{i18n[product.name]}</h2>
-          <p className="">{i18n[product.description]}</p>
-        </div>
-        <div className="">
-          <div role="region" className="flex-column flex-wrap gap-1">
-            {details}
-          </div>
+    <div className="flex-row gap-3 margin-top margin-bottom block medium-flex">
+      <div>
+        <a className="small" href={`/${lang}`}>
+          &lt; {i18n.goHome}
+        </a>
+        <h2>{i18n[product.name]}</h2>
+        <p>{i18n[product.description]}</p>
+        <div role="region" className="flex-column flex-wrap gap-1">
+          {details}
         </div>
       </div>
       <div className="flex-column gap-2">
