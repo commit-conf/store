@@ -29,7 +29,7 @@ function TShirtDetails({ tshirt }: TShirtProductViewProps) {
             label={i18n.Sizes}
             value={
               <div className="wide flex-column">
-                <table className="table margin-bottom">
+                <table className="table margin-bottom responsive">
                   <thead>
                     <tr>
                       <th></th>
@@ -42,8 +42,13 @@ function TShirtDetails({ tshirt }: TShirtProductViewProps) {
                     <tr>
                       <td>{i18n.Width}</td>
                       {Object.entries(value.sizes).map(
-                        ([size, { width, height }]) => (
-                          <td key={size} className="text-center">
+                        ([size, { width, height }], index) => (
+                          <td
+                            key={size}
+                            className="text-center"
+                            data-label={size}
+                            scope={index == 0 ? "row" : undefined}
+                          >
                             {width}
                           </td>
                         )
@@ -52,8 +57,12 @@ function TShirtDetails({ tshirt }: TShirtProductViewProps) {
                     <tr>
                       <td>{i18n.Height}</td>
                       {Object.entries(value.sizes).map(
-                        ([size, { width, height }]) => (
-                          <td key={size} className="text-center">
+                        ([size, { width, height }], index) => (
+                          <td
+                            key={size}
+                            className="text-center"
+                            scope={index == 0 ? "row" : undefined}
+                          >
                             {height}
                           </td>
                         )
