@@ -3,15 +3,20 @@
     clamp(var(--margin-1), 1vw, var(--margin-2));
   // caclulate border-spacing using viewport with a min of margin-2 margin-1 and a max of margin-4 margin-2
   font-size: clamp(70%, 2vw, 90%);
+  border-collapse: collapse;
+  th,
+  td {
+    padding: var(--padding-2);
+    border-bottom: 1px solid var(--color-gray-300);
+  }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 460px) {
   .table.responsive {
     display: flex;
     flex-direction: row;
     gap: var(--gap-4);
     justify-content: center;
-    margin-top: var(--margin-4);
 
     & thead {
       display: flex;
@@ -19,8 +24,11 @@
       justify-content: end;
     }
 
-    & td {
+    & td,
+    & th {
       text-align: center;
+      border: none;
+      padding: 0;
     }
 
     & tr {
@@ -28,6 +36,7 @@
       flex-direction: column;
       gap: var(--gap-4);
     }
+
     & tbody {
       display: flex;
       flex-direction: row;

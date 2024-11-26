@@ -28,8 +28,8 @@ function TShirtDetails({ tshirt }: TShirtProductViewProps) {
           <ProductInfoItem
             label={i18n.Sizes}
             value={
-              <div className="wide flex-column">
-                <table className="table margin-bottom responsive">
+              <div className="wide flex-column margin-bottom">
+                <table className="table responsive margin-bottom margin-top">
                   <thead>
                     <tr>
                       <th></th>
