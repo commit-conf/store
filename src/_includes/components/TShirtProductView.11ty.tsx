@@ -1,5 +1,5 @@
 import React from "react";
-import Product, { TShirt } from "../../_data/products/Product";
+import { TShirt } from "../../_data/products/Product";
 import ProductView, {
   ProductImage,
   ProductInfoItem,
@@ -129,7 +129,9 @@ function Images({ tshirt }: TShirtProductViewProps) {
 export default function TShirtProductView({ tshirt }: TShirtProductViewProps) {
   return (
     <ProductView
-      product={tshirt}
+      name={tshirt.name}
+      description={tshirt.description}
+      price={tshirt.price}
       details={<TShirtDetails tshirt={tshirt} />}
       form={<Buttons tshirt={tshirt} />}
       image={<Images tshirt={tshirt} />}

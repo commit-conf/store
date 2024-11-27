@@ -15,7 +15,9 @@ export default function CupProductView({ cup }: CupProductViewProps) {
   const { i18n } = React.useContext(I18nContext);
   return (
     <ProductView
-      product={cup}
+      name={cup.name}
+      description={cup.description}
+      price={cup.price}
       details={<ProductInfoItem label={i18n.Dimensions} value={cup.capacity} />}
       form={<PurchaseButton href={cup.stripeURL} />}
       image={

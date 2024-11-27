@@ -1,12 +1,12 @@
 import React from "react";
 import Catalogue from "../../_data/products/Catalogue";
 import { Eleventy } from "../../../types";
-import Product from "../../_data/products/Product";
-import { getI18n, I18nContext } from "../i18n/index.11ty";
+import { BaseProduct } from "../../_data/products/Product";
+import { I18nContext } from "../i18n/index.11ty";
 import { printPrice } from "../utils/price";
 
 interface ProductItemViewProps {
-  product: Product;
+  product: BaseProduct;
 }
 
 function ProductItemView({ product }: ProductItemViewProps) {

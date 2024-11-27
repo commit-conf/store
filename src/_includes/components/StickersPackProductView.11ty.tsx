@@ -17,7 +17,9 @@ export default function StickersPackProductView({
   const { i18n } = React.useContext(I18nContext);
   return (
     <ProductView
-      product={stickersPack}
+      name={stickersPack.name}
+      description={stickersPack.description}
+      price={stickersPack.price}
       details={
         <ProductInfoItem
           label={i18n.Dimensions}

@@ -1,6 +1,6 @@
 import { I18nEntry } from "../../_includes/i18n/index.11ty";
 
-interface BaseProduct {
+export interface BaseProduct {
   id: string;
   name: I18nEntry;
   description: I18nEntry;
@@ -46,7 +46,3 @@ export interface Cup extends BaseProduct {
   capacity: string;
   stripeURL: string;
 }
-
-type Product = TShirt | StickersPack | Cup;
-
-export default Product;

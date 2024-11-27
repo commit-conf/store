@@ -1,7 +1,7 @@
 import React from "react";
-import Product from "../../_data/products/Product";
-import { I18nContext } from "../i18n/index.11ty";
+import { I18nContext, I18nEntry } from "../i18n/index.11ty";
 import { printPrice } from "../utils/price";
+import { ResType } from "../i18n/ResType.11ty";
 
 interface ProductInfoItemProps {
   label: string;
@@ -95,14 +95,18 @@ export function ProductImage({ className = "", ...data }: ProductImageProps) {
 }
 
 interface ProductViewProps {
-  product: Product;
+  name: I18nEntry;
+  description: I18nEntry;
+  price: number;
   details: JSX.Element;
   form: JSX.Element;
   image: JSX.Element;
 }
 
 export default function ProductView({
-  product,
+  name,
+  description,
+  price,
   details,
   form,
   image,
@@ -115,8 +119,8 @@ export default function ProductView({
         <a className="small" href={`/${lang}`}>
           &lt; {i18n.goHome}
         </a>
-        <h2>{i18n[product.name]}</h2>
-        <p>{i18n[product.description]}</p>
+        <h2>{i18n[name]}</h2>
+        <p>{i18n[description]}</p>
         <div role="region" className="flex-column flex-wrap gap-1">
           {details}
         </div>
@@ -125,7 +129,7 @@ export default function ProductView({
         {image}
         <div className="flex-column gap-05">
           <p className="no-margin font-weight-bold font-size-2xl">
-            {i18n.Price}: {printPrice(product.price, lang)}{" "}
+            {i18n.Price}: {printPrice(price, lang)}{" "}
             <small className="font-size-m font-weight-normal">
               ({i18n.TaxIncluded})
             </small>
