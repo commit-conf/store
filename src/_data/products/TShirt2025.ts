@@ -6,10 +6,11 @@ const TShirt2025: TShirt = {
   name: 'TShirt2025',
   description: 'TShirt2025Description',
   material: '100%Cotton',
-  images: ['tshirt-2025.avif'],
   price: 18,
+  images: ['tshirt-2025-male.avif', 'tshirt-2025-female.avif'],
   variants: [{
-    type: 'male',
+    type: 'Male',
+    image: 'tshirt-2025-male.avif',
     sizes: {
       S: { width: "49cm", height: "69cm" },
       M: { width: "52cm", height: "71cm" },
@@ -21,7 +22,8 @@ const TShirt2025: TShirt = {
     },
     stripeURL: "https://book.stripe.com/test_5kAeXT51raTV2mA288"
   }, {
-    type: 'female',
+    type: 'Female',
+    image: 'tshirt-2025-female.avif',
     sizes: {
       S: { width: "41cm", height: "62cm" },
       M: { width: "44cm", height: "64cm" },

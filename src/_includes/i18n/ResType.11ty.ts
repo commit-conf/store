@@ -34,4 +34,6 @@ export interface ResType {
   NoShipping: string;
   Continue: string;
   Cancel: string;
+  Cup2025: string;
+  Cup2025Description: string;
 }

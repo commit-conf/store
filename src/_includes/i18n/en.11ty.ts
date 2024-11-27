@@ -35,7 +35,9 @@ export const en: ResType = {
   Female: 'Female',
   NoShipping: 'No shipping. You can pick up your order at the event.',
   Continue: 'Continue',
-  Cancel: 'Cancel'
+  Cancel: 'Cancel',
+  Cup2025: 'Cup 2025',
+  Cup2025Description: 'The official Commit Conf cup for 2025. Your perfect companion for pair programming at all times. It holds coffee, tea, water, and even beer. Works offline and comes without AI, because it\'s also designed for zombie apocalypses.'
 }
 
 export default en;

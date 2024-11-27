@@ -15,7 +15,7 @@ export const es: ResType = {
   Catalogue: "Cosas chulas que quieres",
   White: "Blanco",
   TShirt2025: "Camiseta 2025",
-  TShirt2025Description: "La camiseta oficial de Commit para 2025. Ideal para el próximo evento o para divertirte viendo las caras de quienes intenten descifrarlo.",
+  TShirt2025Description: "La camiseta oficial de Commit 2025. Ideal para el próximo evento o para divertirte viendo las caras de quienes intenten descifrarlo.",
   "100%Cotton": "100% algodón",
   StickersPack: "Pack de pegatinas",
   StickersPackDescription: "Un pack de increíbles pegatinas para tu portátil. Saca tu lado geek y sé la envidia de la oficina.",
@@ -35,7 +35,9 @@ export const es: ResType = {
   Female: 'Mujer',
   NoShipping: 'No se hacen envíos a domicilio. Tendrás que recogerlo en el evento.',
   Continue: 'Continuar',
-  Cancel: 'Cancelar'
+  Cancel: 'Cancelar',
+  Cup2025: 'Taza 2025',
+  Cup2025Description: 'La taza oficial de Commit 2025. Tu compañera perfecta para hacer pair programming en todo momento. Admite café, té, agua y hasta cerveza. Funciona offline y viene sin IA, porque también está pensada para los apocalipsis zombis.'
 }
 
 export default es;

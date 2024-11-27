@@ -79,21 +79,38 @@ export function PurchaseButton({
   );
 }
 
+interface ProductImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+  alt: string;
+}
+
+export function ProductImage({ className = "", ...data }: ProductImageProps) {
+  return (
+    <img
+      {...data}
+      fetchPriority="high"
+      decoding="async"
+      className={"border-radius-m aspect-4-4 cover " + className}
+    />
+  );
+}
+
 interface ProductViewProps {
   product: Product;
   details: JSX.Element;
   form: JSX.Element;
+  image: JSX.Element;
 }
 
 export default function ProductView({
   product,
   details,
   form,
+  image,
 }: ProductViewProps) {
   const { i18n, lang } = React.useContext(I18nContext);
   // TODO carrousel?
   return (
-    <div className="flex-row gap-3 margin-top margin-bottom block medium-flex">
+    <div className="gap-3 margin-top margin-bottom block medium-grid grid-cols-2">
       <div>
         <a className="small" href={`/${lang}`}>
           &lt; {i18n.goHome}
@@ -105,13 +122,7 @@ export default function ProductView({
         </div>
       </div>
       <div className="flex-column gap-2">
-        <img
-          src={`/img/products/${product.images[0]}`}
-          alt={i18n[product.name]}
-          fetchPriority="high"
-          decoding="async"
-          className="border-radius-m aspect-4-4 cover"
-        />
+        {image}
         <div className="flex-column gap-05">
           <p className="no-margin font-weight-bold font-size-2xl">
             {i18n.Price}: {printPrice(product.price, lang)}{" "}

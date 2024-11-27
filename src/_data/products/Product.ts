@@ -18,9 +18,10 @@ export interface TShirtSize {
 }
 
 interface TShirtVariants {
-  type: 'male' | 'female';
+  type: 'Male' | 'Female';
   sizes: TShirtSize;
   stripeURL: string;
+  image: string;
 }
 
 export interface TShirt extends BaseProduct {
@@ -40,6 +41,12 @@ export interface StickersPack extends BaseProduct {
   stripeURL: string;
 }
 
-type Product = TShirt | StickersPack;
+export interface Cup extends BaseProduct {
+  color: I18nEntry;
+  capacity: string;
+  stripeURL: string;
+}
+
+type Product = TShirt | StickersPack | Cup;
 
 export default Product;

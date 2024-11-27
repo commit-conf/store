@@ -1,6 +1,7 @@
 import React from "react";
 import { StickersPack } from "../../_data/products/Product";
 import ProductView, {
+  ProductImage,
   ProductInfoItem,
   PurchaseButton,
 } from "./ProductView.11ty";
@@ -23,6 +24,12 @@ export default function StickersPackProductView({
           value={stickersPack.stickers
             .map(({ dimensions }) => dimensions)
             .join(" | ")}
+        />
+      }
+      image={
+        <ProductImage
+          src={`/img/products/${stickersPack.images[0]}`}
+          alt={i18n[stickersPack.name]}
         />
       }
       form={<PurchaseButton href={stickersPack.stripeURL} />}

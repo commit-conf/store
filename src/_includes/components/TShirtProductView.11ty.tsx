@@ -1,6 +1,7 @@
 import React from "react";
 import Product, { TShirt } from "../../_data/products/Product";
 import ProductView, {
+  ProductImage,
   ProductInfoItem,
   PurchaseButton,
 } from "./ProductView.11ty";
@@ -10,7 +11,7 @@ interface TShirtProductViewProps {
   tshirt: TShirt;
 }
 
-const DEFAULT_TYPE = "male";
+const DEFAULT_TYPE = "Male";
 
 function TShirtDetails({ tshirt }: TShirtProductViewProps) {
   const { i18n } = React.useContext(I18nContext);
@@ -91,8 +92,8 @@ function Buttons({ tshirt }: TShirtProductViewProps) {
             id="switch"
             className="padding-4 padding-vertical-2 margin-bottom"
           >
-            <option value="male">{i18n.Male}</option>
-            <option value="female">{i18n.Female}</option>
+            <option value="Male">{i18n.Male}</option>
+            <option value="Female">{i18n.Female}</option>
           </select>
         }
       />
@@ -108,12 +109,30 @@ function Buttons({ tshirt }: TShirtProductViewProps) {
   );
 }
 
+function Images({ tshirt }: TShirtProductViewProps) {
+  const { i18n } = React.useContext(I18nContext);
+  return (
+    <>
+      {tshirt.variants.map(({ image, type }) => (
+        <ProductImage
+          key={image}
+          src={`/img/products/${image}`}
+          alt={`${i18n[tshirt.name]} - ${i18n[type]}`}
+          data-switch={type}
+          className={type == DEFAULT_TYPE ? "" : "hide"}
+        />
+      ))}
+    </>
+  );
+}
+
 export default function TShirtProductView({ tshirt }: TShirtProductViewProps) {
   return (
     <ProductView
       product={tshirt}
       details={<TShirtDetails tshirt={tshirt} />}
       form={<Buttons tshirt={tshirt} />}
+      image={<Images tshirt={tshirt} />}
     />
   );
 }

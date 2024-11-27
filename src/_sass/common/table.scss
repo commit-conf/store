@@ -11,7 +11,8 @@
   }
 }
 
-@media screen and (max-width: 460px) {
+// we use the tables in a 2 cols grid so the max-width of the breakpoint is the dobule of the real braekpoint we want
+@media screen and (max-width: 1050px) {
   .table.responsive {
     display: flex;
     flex-direction: row;
