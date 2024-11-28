@@ -8,7 +8,12 @@ import BodyProductView from "../../../_includes/components/BodyProductView.11ty"
 export function render(data: Eleventy) {
   const i18n = en;
   return (
-    <BasicLayoutView {...data} lang="es" title={i18n[Body2025.name]}>
+    <BasicLayoutView
+      {...data}
+      lang="es"
+      title={i18n[Body2025.name]}
+      product={Body2025}
+    >
       <BodyProductView body={Body2025} />
     </BasicLayoutView>
   );

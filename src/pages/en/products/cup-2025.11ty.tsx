@@ -8,7 +8,12 @@ import CupProductView from "../../../_includes/components/CupProductView.11ty";
 export function render(data: Eleventy) {
   const i18n = en;
   return (
-    <BasicLayoutView {...data} lang="en" title={i18n[Cup2025.name]}>
+    <BasicLayoutView
+      {...data}
+      lang="en"
+      title={i18n[Cup2025.name]}
+      product={Cup2025}
+    >
       <CupProductView cup={Cup2025} />
     </BasicLayoutView>
   );

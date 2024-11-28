@@ -8,7 +8,12 @@ import TShirtProductView from "../../../_includes/components/TShirtProductView.1
 export function render(data: Eleventy) {
   const i18n = es;
   return (
-    <BasicLayoutView {...data} lang="es" title={i18n[TShirt2025.name]}>
+    <BasicLayoutView
+      {...data}
+      lang="es"
+      title={i18n[TShirt2025.name]}
+      product={TShirt2025}
+    >
       <TShirtProductView tshirt={TShirt2025} />
     </BasicLayoutView>
   );

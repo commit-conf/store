@@ -8,7 +8,12 @@ import StickersPackProductView from "../../../_includes/components/StickersPackP
 export function render(data: Eleventy) {
   const i18n = en;
   return (
-    <BasicLayoutView {...data} lang="en" title={i18n[StickersPack.name]}>
+    <BasicLayoutView
+      {...data}
+      lang="en"
+      title={i18n[StickersPack.name]}
+      product={StickersPack}
+    >
       <StickersPackProductView stickersPack={StickersPack} />
     </BasicLayoutView>
   );

@@ -4,11 +4,14 @@ import site from "../../_data/site";
 import { getI18n, I18nContext } from "../i18n/index.11ty";
 import Footer from "../components/Footer.11ty";
 import Topbar from "../components/Topbar.11ty";
+import { BaseProduct } from "../../_data/products/Product";
 
-interface LayoutData extends Eleventy, React.PropsWithChildren {}
+interface LayoutData extends Eleventy, React.PropsWithChildren {
+  product?: BaseProduct;
+}
 
 export default function BaseLayoutView(data: LayoutData) {
-  const { lang, assets, title } = data;
+  const { lang, assets, title, product } = data;
   const i18n = getI18n(lang);
   const fullTitle = `${title} - ${site.name}`;
   const unsafeInline = site.environment == "dev" ? "unsafe-inline" : "";
@@ -70,6 +73,20 @@ export default function BaseLayoutView(data: LayoutData) {
           {assets.js.main.map((part) => (
             <script src={part} key={part} defer></script>
           ))}
+          {product ? (
+            <script
+              id="product"
+              type="application/json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(product, (key, value) =>
+                  typeof value === "string" &&
+                  (value as keyof typeof i18n) in i18n
+                    ? i18n[value as keyof typeof i18n]
+                    : value
+                ),
+              }}
+            ></script>
+          ) : null}
         </head>
         <body className="flex-column justify-between">
           <div>

@@ -18,13 +18,9 @@ export function ProductInfoItem({ label, value }: ProductInfoItemProps) {
 }
 
 interface PurchaseButtonProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
-  href: string;
-}
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
+// Ahora se le pasarían las props del href y data-switch al enlace directamente
 export function PurchaseButton({
   className = "",
   href,
@@ -32,12 +28,7 @@ export function PurchaseButton({
 }: PurchaseButtonProps) {
   const { i18n } = React.useContext(I18nContext);
   return (
-    <div
-      aria-live="assertive"
-      aria-relevant="additions"
-      {...rest}
-      className={className}
-    >
+    <div aria-live="assertive" aria-relevant="additions" className={className}>
       <button
         className={"purchase-button button primary text-center no-margin "}
       >
@@ -65,6 +56,7 @@ export function PurchaseButton({
         <div className="flex-row gap-1 flex-wrap">
           <a
             href={href}
+            {...rest}
             className="button primary text-center no-margin"
             target="_blank"
           >
