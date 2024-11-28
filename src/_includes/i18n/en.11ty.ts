@@ -37,7 +37,12 @@ export const en: ResType = {
   Continue: 'Continue',
   Cancel: 'Cancel',
   Cup2025: 'Cup 2025',
-  Cup2025Description: 'The official Commit Conf cup for 2025. Your perfect companion for pair programming at all times. It holds coffee, tea, water, and even beer. Works offline and comes without AI, because it\'s also designed for zombie apocalypses.'
+  Cup2025Description: 'The official Commit Conf cup for 2025. Your perfect companion for pair programming at all times. It holds coffee, tea, water, and even beer. Works offline and comes without AI, because it\'s also designed for zombie apocalypses.',
+  Body2025: 'Baby body 2025',
+  Body2025Description: 'The official Commit Conf baby body for 2025. Because it\'s never too early to start coding. Or to curse at your code. It doesn\'t come with a debugger. Perfect for the smallest members of the family.',
+  '6m': '6 months',
+  '12m': '12 months',
+  '18m': '18 months',
 }
 
 export default en;

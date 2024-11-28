@@ -36,4 +36,9 @@ export interface ResType {
   Cancel: string;
   Cup2025: string;
   Cup2025Description: string;
+  Body2025: string;
+  Body2025Description: string;
+  '6m': string;
+  '12m': string;
+  '18m': string;
 }

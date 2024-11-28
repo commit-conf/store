@@ -30,6 +30,13 @@ export interface TShirt extends BaseProduct {
   material: I18nEntry;
 }
 
+export interface Body extends BaseProduct {
+  color: I18nEntry;
+  material: I18nEntry;
+  stripeURL: string;
+  sizes: I18nEntry[];
+}
+
 export interface Sticker {
   dimensions: string;
   image: string;
