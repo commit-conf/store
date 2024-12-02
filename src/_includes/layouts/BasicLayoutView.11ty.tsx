@@ -6,6 +6,7 @@ import { BaseProduct } from "../../_data/products/Product";
 
 interface BasicLayoutViewData extends Eleventy, PropsWithChildren {
   product?: BaseProduct;
+  scheme?: object;
 }
 
 export default function BasicLayoutView(data: BasicLayoutViewData) {

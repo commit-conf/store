@@ -30,7 +30,7 @@ export default function StickersPackProductView({
       }
       image={
         <ProductImage
-          src={`/img/products/${stickersPack.images[0]}`}
+          src={stickersPack.images[0]}
           alt={i18n[stickersPack.name]}
         />
       }

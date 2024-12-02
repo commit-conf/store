@@ -1,4 +1,5 @@
 export interface ResType {
+  locale: 'en' | 'es';
   metaDescription: string;
   goHome: string;
   skipToContent: string;
@@ -15,6 +16,7 @@ export interface ResType {
   TShirt2025: string;
   TShirt2025Description: string;
   '100%Cotton': string;
+  '96%Cotton4%Elastane': string;
   StickersPack: string;
   StickersPackDescription: string;
   Material: string;
@@ -38,7 +40,13 @@ export interface ResType {
   Cup2025Description: string;
   Body2025: string;
   Body2025Description: string;
+  '3m': string;
   '6m': string;
+  '9m': string;
   '12m': string;
   '18m': string;
+  TShirtStaff: string;
+  TShirtStaffDescription: string;
+  Black: string;
+  Kids: string;
 }

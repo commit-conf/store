@@ -10,7 +10,11 @@ const applySwitch = (group: string, value: string) => {
     const newValue = el.getAttribute(`data-${value}`); // value to set
 
     if (targetAttr && newValue !== null) {
-      (el as HTMLElement).setAttribute(targetAttr, newValue); // change the value
+      if (targetAttr === "innerHTML") {
+        (el as HTMLElement).innerHTML = newValue; // change the innerHTML
+      } else {
+        (el as HTMLElement).setAttribute(targetAttr, newValue); // change the value
+      }
     }
   });
 };

@@ -8,10 +8,11 @@ import { BaseProduct } from "../../_data/products/Product";
 
 interface LayoutData extends Eleventy, React.PropsWithChildren {
   product?: BaseProduct;
+  scheme?: object;
 }
 
 export default function BaseLayoutView(data: LayoutData) {
-  const { lang, assets, title, product } = data;
+  const { lang, assets, title, product, scheme } = data;
   const i18n = getI18n(lang);
   const fullTitle = `${title} - ${site.name}`;
   const unsafeInline = site.environment == "dev" ? "unsafe-inline" : "";
@@ -84,6 +85,14 @@ export default function BaseLayoutView(data: LayoutData) {
                     ? i18n[value as keyof typeof i18n]
                     : value
                 ),
+              }}
+            ></script>
+          ) : null}
+          {scheme ? (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(scheme),
               }}
             ></script>
           ) : null}

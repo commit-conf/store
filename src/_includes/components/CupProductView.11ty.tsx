@@ -20,12 +20,7 @@ export default function CupProductView({ cup }: CupProductViewProps) {
       price={cup.price}
       details={<ProductInfoItem label={i18n.Dimensions} value={cup.capacity} />}
       form={<PurchaseButton href={cup.stripeURL} />}
-      image={
-        <ProductImage
-          src={`/img/products/${cup.images[0]}`}
-          alt={i18n[cup.name]}
-        />
-      }
+      image={<ProductImage src={cup.images[0]} alt={i18n[cup.name]} />}
     />
   );
 }

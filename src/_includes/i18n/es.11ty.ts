@@ -1,6 +1,7 @@
 import { ResType } from "./ResType.11ty";
 
 export const es: ResType = {
+  locale: "es",
   metaDescription: "Commit es el evento que junta a las comunidades de IT de España durante dos días. Y esta, es su tienda.",
   skipToContent: "Saltar al contenido",
   goHome: "Ir a inicio",
@@ -17,6 +18,7 @@ export const es: ResType = {
   TShirt2025: "Camiseta 2025",
   TShirt2025Description: "La camiseta oficial de Commit 2025. Ideal para el próximo evento o para divertirte viendo las caras de quienes intenten descifrarlo.",
   "100%Cotton": "100% algodón",
+  "96%Cotton4%Elastane": "96% algodón, 4% elastano",
   StickersPack: "Pack de pegatinas",
   StickersPackDescription: "Un pack de increíbles pegatinas para tu portátil. Saca tu lado geek y sé la envidia de la oficina.",
   Material: "Material",
@@ -40,9 +42,15 @@ export const es: ResType = {
   Cup2025Description: 'La taza oficial de Commit 2025. Tu compañera perfecta para hacer pair programming en todo momento. Admite café, té, agua y hasta cerveza. Funciona offline y viene sin IA, porque también está pensada para los apocalipsis zombis.',
   Body2025: 'Body bebé 2025',
   Body2025Description: 'El body oficial de Commit 2025. Porque nunca es demasiado pronto para empezar a programar. O para cagarse en la programación. No viene con depurador. Perfecto para los miembros más pequeños de la familia.',
+  '3m': '3 meses',
   '6m': '6 meses',
+  '9m': '9 meses',
   '12m': '12 meses',
   '18m': '18 meses',
+  TShirtStaff: 'Camiseta staff',
+  TShirtStaffDescription: 'La camiseta oficial del staff de Commit. Solo para quienes hacen posible Commit.',
+  Black: 'Negra',
+  Kids: 'Infantil',
 }
 
 export default es;

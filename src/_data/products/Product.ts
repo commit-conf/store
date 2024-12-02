@@ -4,8 +4,11 @@ export interface BaseProduct {
   id: string;
   name: I18nEntry;
   description: I18nEntry;
-  price: number;
   images: string[];
+}
+
+export interface BaseProductWithPrice extends BaseProduct{
+  price: number;
 }
 
 interface TShirtSizeDetails {
@@ -13,14 +16,17 @@ interface TShirtSizeDetails {
   height: string;
 }
 
-export interface TShirtSize {
+export interface ClothingSize {
   [size: string]: TShirtSizeDetails;
 }
 
+export type ClothingType = "Male" | "Female" | "Kids";
+
 interface TShirtVariants {
-  type: 'Male' | 'Female';
-  sizes: TShirtSize;
+  type: ClothingType;
+  sizes: ClothingSize;
   stripeURL: string;
+  price: number;
   image: string;
 }
 
@@ -30,11 +36,11 @@ export interface TShirt extends BaseProduct {
   material: I18nEntry;
 }
 
-export interface Body extends BaseProduct {
+export interface Body extends BaseProductWithPrice {
   color: I18nEntry;
   material: I18nEntry;
   stripeURL: string;
-  sizes: I18nEntry[];
+  sizes: ClothingSize;
 }
 
 export interface Sticker {
@@ -43,13 +49,17 @@ export interface Sticker {
   description: string;
 }
 
-export interface StickersPack extends BaseProduct {
+export interface StickersPack extends BaseProductWithPrice {
   stickers: Sticker[];
   stripeURL: string;
 }
 
-export interface Cup extends BaseProduct {
+export interface Cup extends BaseProductWithPrice {
   color: I18nEntry;
   capacity: string;
   stripeURL: string;
+  size: {
+    height: string;
+    diameter: string;
+  }
 }

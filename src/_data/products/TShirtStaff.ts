@@ -2,17 +2,17 @@ import { ResType } from "../../_includes/i18n/ResType.11ty";
 import site from "../site";
 import { TShirt } from "./Product";
 
-const TShirt2025: TShirt = {
-  color: 'White',
-  id: "tshirt-2025",
-  name: 'TShirt2025',
-  description: 'TShirt2025Description',
+const TShirtStaff: TShirt = {
+  color: 'Black',
+  id: "tshirt-staff",
+  name: 'TShirtStaff',
+  description: 'TShirtStaffDescription',
   material: '100%Cotton',
-  images: [`${site.productImageFolder}/tshirt-2025-male.avif`, `${site.productImageFolder}/tshirt-2025-female.avif`],
+  images: [`${site.productImageFolder}/tshirt-staff-male.avif`, `${site.productImageFolder}/tshirt-staff-female.avif`],
   variants: [{
     type: 'Male',
     price: 18,
-    image: `${site.productImageFolder}/tshirt-2025-male.avif`,
+    image: `${site.productImageFolder}/tshirt-staff-male.avif`,
     sizes: {
       S: { width: "49cm", height: "69cm" },
       M: { width: "52cm", height: "71cm" },
@@ -26,7 +26,7 @@ const TShirt2025: TShirt = {
   }, {
     type: 'Female',
     price: 18,
-    image: `${site.productImageFolder}/tshirt-2025-female.avif`,
+    image: `${site.productImageFolder}/tshirt-staff-female.avif`,
     sizes: {
       S: { width: "41cm", height: "62cm" },
       M: { width: "44cm", height: "64cm" },
@@ -48,32 +48,32 @@ const TShirt2025: TShirt = {
       '9/10': { width: "41cm", height: "55cm" },
       '11/12': { width: "44cm", height: "59cm" },
     },
-    stripeURL: "https://book.stripe.com/test_abecPL3XnaTV5yM001"
+    stripeURL: "https://book.stripe.com/test_fZecPL3XnaTV5yM001"
   }]
 }
 
-export default TShirt2025;
+export default TShirtStaff;
 
-export function getTShirt2025Scheme(i18n: ResType) {
+export function getTShirtStaffScheme(i18n: ResType) {
   return [
     {
       '@context': "https://schema.org/",
       '@type': "ProductGroup",
-      name: i18n[TShirt2025.name],
-      description: i18n[TShirt2025.description],
-      url: "https://store.commit-conf.com/",
-      productGroupID: TShirt2025.id,
-      material: i18n[TShirt2025.material],
-      color: i18n[TShirt2025.color],
+      name: i18n[TShirtStaff.name],
+      description: i18n[TShirtStaff.description],
+      url: site.baseUrl,
+      productGroupID: TShirtStaff.id,
+      material: i18n[TShirtStaff.material],
+      color: i18n[TShirtStaff.color],
       variesBy: [
         "https://schema.org/audience"
       ],
-      hasVariant: TShirt2025.variants.map(variant => (
+      hasVariant: TShirtStaff.variants.map(variant => (
         {
           "@type": "Product",
-          "sku": `${TShirt2025.id}-${variant.type.toLowerCase()}`,
+          "sku": `${TShirtStaff.id}-${variant.type.toLowerCase()}`,
           "image": variant.image,
-          "name": `${i18n[TShirt2025.name]} - ${i18n[variant.type]}`,
+          "name": `${i18n[TShirtStaff.name]} - ${i18n[variant.type]}`,
           "size": Object.keys(variant.sizes),
           audience: {
             "@type": "PeopleAudience",
@@ -81,7 +81,7 @@ export function getTShirt2025Scheme(i18n: ResType) {
           },
           "offers": {
             "@type": "Offer",
-            "url": `${site.baseUrl}/${i18n.locale}/products/tshirt-2025?type=${variant.type.toLowerCase()}`,
+            "url": `${site.baseUrl}/${i18n.locale}/products/tshirt-staff?type=${variant.type.toLowerCase()}`,
             "priceCurrency": "EUR",
             "price": variant.price,
             "itemCondition": "https://schema.org/NewCondition",

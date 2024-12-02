@@ -2,6 +2,7 @@ export interface Site {
   buildTime: Date;
   baseUrl: string;
   metaImage: string;
+  productImageFolder: string;
   name: string;
   email: string;
   xAccount: string;
@@ -13,6 +14,7 @@ export default {
   buildTime: new Date(),
   baseUrl: "https://store.commit-conf.com",
   metaImage: "https://store.commit-conf.com/img/square-head.jpg",
+  productImageFolder: "/img/products",
   name: "Commit Store",
   email: "info@commit-conf.com",
   xAccount: "@commitconf",

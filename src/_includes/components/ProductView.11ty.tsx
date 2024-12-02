@@ -2,6 +2,7 @@ import React from "react";
 import { I18nContext, I18nEntry } from "../i18n/index.11ty";
 import { printPrice } from "../utils/price";
 import { ResType } from "../i18n/ResType.11ty";
+import PriceView from "./PriceView";
 
 interface ProductInfoItemProps {
   label: string;
@@ -89,7 +90,7 @@ export function ProductImage({ className = "", ...data }: ProductImageProps) {
 interface ProductViewProps {
   name: I18nEntry;
   description: I18nEntry;
-  price: number;
+  price: number | JSX.Element;
   details: JSX.Element;
   form: JSX.Element;
   image: JSX.Element;
@@ -121,7 +122,12 @@ export default function ProductView({
         {image}
         <div className="flex-column gap-05">
           <p className="no-margin font-weight-bold font-size-2xl">
-            {i18n.Price}: {printPrice(price, lang)}{" "}
+            {i18n.Price}:{" "}
+            {typeof price == "number" ? (
+              <PriceView price={price} lang={lang} />
+            ) : (
+              price
+            )}{" "}
             <small className="font-size-m font-weight-normal">
               ({i18n.TaxIncluded})
             </small>
