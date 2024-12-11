@@ -8,7 +8,7 @@ const Cup2025: Cup = {
   description: 'Cup2025Description',
   price: 9,
   images: [`${site.productImageFolder}/cup-2025.avif`],
-  stripeURL: "https://book.stripe.com/test_4gw8zvbpP3rt5yMcMO",
+  stripeURL: site.CUP_2025_STRIPE_URL,
   color: 'White',
   capacity: '360ml',
   size: {

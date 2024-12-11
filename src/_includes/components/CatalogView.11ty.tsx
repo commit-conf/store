@@ -39,6 +39,7 @@ function ProductItemView({ product, price }: ProductItemViewProps) {
               {i18n[product.name]}
             </p>
             <p className="no-margin small text-muted">
+              {(product as TShirt).minPrice ? `${i18n.From} ` : undefined}
               {printPrice(price, lang)}
             </p>
           </div>
@@ -59,10 +60,8 @@ export default function CatalogueView(data: Eleventy) {
             product={product}
             key={product.id}
             price={
-              (product as TShirt).variants
-                ? Math.max(
-                    ...(product as TShirt).variants.map((value) => value.price)
-                  )
+              (product as TShirt).minPrice
+                ? (product as TShirt).minPrice
                 : (product as BaseProductWithPrice).price
             }
           />

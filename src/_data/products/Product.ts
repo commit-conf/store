@@ -22,7 +22,7 @@ export interface ClothingSize {
 
 export type ClothingType = "Male" | "Female" | "Kids";
 
-interface TShirtVariants {
+export interface TShirtVariant {
   type: ClothingType;
   sizes: ClothingSize;
   stripeURL: string;
@@ -31,8 +31,9 @@ interface TShirtVariants {
 }
 
 export interface TShirt extends BaseProduct {
-  variants: TShirtVariants[];
+  variants: TShirtVariant[];
   color: I18nEntry;
+  minPrice: number;
   material: I18nEntry;
 }
 

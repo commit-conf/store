@@ -49,4 +49,5 @@ export interface ResType {
   TShirtStaffDescription: string;
   Black: string;
   Kids: string;
+  From: string;
 }

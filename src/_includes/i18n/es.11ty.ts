@@ -51,6 +51,7 @@ export const es: ResType = {
   TShirtStaffDescription: 'La camiseta oficial del staff de Commit. Solo para quienes hacen posible Commit.',
   Black: 'Negra',
   Kids: 'Infantil',
+  From: 'Desde',
 }
 
 export default es;
