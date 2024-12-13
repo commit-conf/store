@@ -18,23 +18,20 @@ function ProductItemView({ product, price }: ProductItemViewProps) {
   // TODO srcset, sizes
   const { i18n, lang } = React.useContext(I18nContext);
   return (
-    <li className="width-30">
-      <a
-        className="no-decoration shadow-container"
-        href={`/es/products/${product.id}`}
-      >
-        <div className="flex-column border border-radius-m shadow">
+    <li>
+      <a className="no-decoration" href={`/es/products/${product.id}`}>
+        <div className="flex-column">
           <img
             alt={i18n[product.name]}
             draggable="false"
             loading="lazy"
             decoding="async"
-            className="aspect-4-4 cover border-radius-top-m"
+            className="aspect-4-4 cover"
             aria-description={i18n[product.description]}
             title={i18n[product.description]}
             src={product.images[0]}
           />
-          <div className="flex-row justify-between gap-2 padding-vertical-2 padding-horizontal-4">
+          <div className="flex-column justify-between gap-05 padding-2">
             <p className="no-margin small text-color-default">
               {i18n[product.name]}
             </p>
@@ -54,7 +51,7 @@ export default function CatalogueView(data: Eleventy) {
   return (
     <div>
       <h1>{i18n.Catalogue}</h1>
-      <ul className="unstyled flex-row flex-wrap gap-2">
+      <ul className="unstyled grid medium-grid-cols-3 row-gap-5 column-gap-min margin-top-8">
         {Catalogue.map((product) => (
           <ProductItemView
             product={product}

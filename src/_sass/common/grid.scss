@@ -31,6 +31,16 @@
   --gap-5: 1.25rem;
   --gap-6: 1.5rem;
   --gap-8: 2rem;
+  --gap-10: 2.5rem;
+  --gap-12: 3rem;
+}
+
+.row-gap-5 {
+  row-gap: var(--gap-12);
+}
+
+.column-gap-min {
+  column-gap: 1px;
 }
 
 .gap-05 {

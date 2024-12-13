@@ -82,7 +82,7 @@ export function ProductImage({ className = "", ...data }: ProductImageProps) {
       {...data}
       fetchPriority="high"
       decoding="async"
-      className={"border-radius-m aspect-4-4 cover " + className}
+      className={"aspect-4-4 cover " + className}
     />
   );
 }
