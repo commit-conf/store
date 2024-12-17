@@ -1,11 +1,11 @@
 import { ResType } from "../../_includes/i18n/ResType.11ty";
 import site from "../site";
-import { TShirt, TShirtVariant } from "./Product";
+import { ClothingType, TShirt, TShirtVariant } from "./Product";
 
 const maleVariant: TShirtVariant = {
   type: 'Male',
   price: 18,
-  image: `${site.productImageFolder}/tshirt-2025-male.avif`,
+  images: [`${site.productImageFolder}/tshirt-2025-male.avif`],
   sizes: {
     S: { width: "49cm", height: "69cm" },
     M: { width: "52cm", height: "71cm" },
@@ -21,7 +21,7 @@ const maleVariant: TShirtVariant = {
 const femaleVariant: TShirtVariant = {
   type: 'Female',
   price: 18,
-  image: `${site.productImageFolder}/tshirt-2025-female.avif`,
+  images: [`${site.productImageFolder}/tshirt-2025-female.avif`],
   sizes: {
     S: { width: "41cm", height: "62cm" },
     M: { width: "44cm", height: "64cm" },
@@ -35,7 +35,7 @@ const femaleVariant: TShirtVariant = {
 const kidsVariant: TShirtVariant = {
   type: 'Kids',
   price: 15,
-  image: `${site.productImageFolder}/tshirt-2025-kids.avif`,
+  images: [`${site.productImageFolder}/tshirt-2025-kids.avif`],
   sizes: {
     '1/2': { width: "29cm", height: "39cm" },
     '3/4': { width: "32cm", height: "43cm" },
@@ -47,7 +47,11 @@ const kidsVariant: TShirtVariant = {
   stripeURL: site.TSHIRT_2025_KIDS_STRIPE_URL
 };
 
-const variants = [maleVariant, femaleVariant, kidsVariant];
+const variants: {[K in ClothingType]: TShirtVariant} =  {
+  'Male': maleVariant,
+  'Female': femaleVariant,
+  'Kids': kidsVariant
+};
 
 const TShirt2025: TShirt = {
   color: 'White',
@@ -55,8 +59,8 @@ const TShirt2025: TShirt = {
   name: 'TShirt2025',
   description: 'TShirt2025Description',
   material: '100%Cotton',
-  minPrice: variants.reduce((min, variant) => Math.min(min, variant.price), Number.MAX_SAFE_INTEGER),
-  images: [`${site.productImageFolder}/tshirt-2025-male.avif`, `${site.productImageFolder}/tshirt-2025-female.avif`],
+  minPrice: Object.values(variants).reduce((min, variant) => Math.min(min, variant.price), Number.MAX_SAFE_INTEGER),
+  images: [`${site.productImageFolder}/tshirt-2025-male.avif`],
   variants
 }
 
@@ -76,11 +80,11 @@ export function getTShirt2025Scheme(i18n: ResType) {
       variesBy: [
         "https://schema.org/audience"
       ],
-      hasVariant: TShirt2025.variants.map(variant => (
+      hasVariant: Object.values(TShirt2025.variants).map(variant => (
         {
           "@type": "Product",
           "sku": `${TShirt2025.id}-${variant.type.toLowerCase()}`,
-          "image": variant.image,
+          "image": variant.images,
           "name": `${i18n[TShirt2025.name]} - ${i18n[variant.type]}`,
           "size": Object.keys(variant.sizes),
           audience: {

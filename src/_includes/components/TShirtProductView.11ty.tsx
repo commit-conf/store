@@ -1,7 +1,8 @@
 import React from "react";
-import { ClothingType, TShirt } from "../../_data/products/Product";
+import { TShirt } from "../../_data/products/Product";
 import ProductView, {
   ProductImage,
+  ProductImages,
   ProductInfoItem,
   PurchaseButton,
 } from "./ProductView.11ty";
@@ -23,7 +24,7 @@ function TShirtDetails({ tshirt }: TShirtProductViewProps) {
       <ProductInfoItem label={i18n.Color} value={i18n[tshirt.color]} />
       <ProductInfoItem label={i18n.Material} value={i18n[tshirt.material]} />
 
-      {tshirt.variants.map((value) => {
+      {Object.values(tshirt.variants).map((value) => {
         return (
           <div
             key={value.type}
@@ -47,7 +48,7 @@ function TShirtDetails({ tshirt }: TShirtProductViewProps) {
 
 function Buttons({ tshirt }: TShirtProductViewProps) {
   const { i18n } = React.useContext(I18nContext);
-  const defaultVariant = tshirt.variants.find(
+  const defaultVariant = Object.values(tshirt.variants).find(
     (value) => value.type == DEFAULT_TYPE
   );
   return (
@@ -71,9 +72,9 @@ function Buttons({ tshirt }: TShirtProductViewProps) {
         href={defaultVariant!.stripeURL}
         data-switch-group="type"
         data-switch="href"
-        data-Male={tshirt.variants[0].stripeURL}
-        data-Female={tshirt.variants[1].stripeURL}
-        data-Kids={tshirt.variants[2].stripeURL}
+        data-Male={tshirt.variants["Male"].stripeURL}
+        data-Female={tshirt.variants["Female"].stripeURL}
+        data-Kids={tshirt.variants["Kids"].stripeURL}
       />
     </>
   );
@@ -81,36 +82,36 @@ function Buttons({ tshirt }: TShirtProductViewProps) {
 
 function Images({ tshirt }: TShirtProductViewProps) {
   const { i18n } = React.useContext(I18nContext);
-  const defaultVariant = tshirt.variants.find(
+  const defaultVariant = Object.values(tshirt.variants).find(
     (value) => value.type == DEFAULT_TYPE
   );
   return (
-    <ProductImage
-      src={defaultVariant?.image}
+    <ProductImages
       alt={i18n[tshirt.name]}
-      data-switch-group="type"
-      data-switch="src"
-      data-Male={tshirt.variants[0].image}
-      data-Female={tshirt.variants[1].image}
-      data-Kids={tshirt.variants[2].image}
+      images={defaultVariant!.images.map((src, index) => (
+        <ProductImage
+          key={index}
+          src={src}
+          alt={i18n[tshirt.name]}
+          data-switch-group="type"
+          data-switch="src"
+          data-Male={tshirt.variants["Male"].images[index]}
+          data-Female={tshirt.variants["Female"].images[index]}
+          data-Kids={tshirt.variants["Kids"].images[index]}
+        />
+      ))}
     />
   );
 }
 
-interface TypeIndexedPrices {
-  "data-Male": number;
-  "data-Female": number;
-  "data-Kids": number;
-}
-
 function Price({ tshirt }: TShirtProductViewProps) {
   const { i18n } = React.useContext(I18nContext);
-  const defaultVariant = tshirt.variants.find(
+  const defaultVariant = Object.values(tshirt.variants).find(
     (value) => value.type == DEFAULT_TYPE
   );
   // create an object where keys are the variant types and the value the price of the variant
   let prices: any = {};
-  tshirt.variants.forEach((variant) => {
+  Object.values(tshirt.variants).forEach((variant) => {
     prices[`data-${variant.type}`] = printPrice(variant.price, i18n.locale);
   });
 

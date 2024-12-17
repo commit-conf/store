@@ -1,7 +1,7 @@
 import React from "react";
 import { Cup } from "../../_data/products/Product";
 import ProductView, {
-  ProductImage,
+  ProductImages,
   ProductInfoItem,
   PurchaseButton,
 } from "./ProductView.11ty";
@@ -20,7 +20,7 @@ export default function CupProductView({ cup }: CupProductViewProps) {
       price={cup.price}
       details={<ProductInfoItem label={i18n.Dimensions} value={cup.capacity} />}
       form={<PurchaseButton href={cup.stripeURL} />}
-      image={<ProductImage src={cup.images[0]} alt={i18n[cup.name]} />}
+      image={<ProductImages alt={i18n[cup.name]} images={cup.images} />}
     />
   );
 }

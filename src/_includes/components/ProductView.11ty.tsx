@@ -1,7 +1,5 @@
 import React from "react";
 import { I18nContext, I18nEntry } from "../i18n/index.11ty";
-import { printPrice } from "../utils/price";
-import { ResType } from "../i18n/ResType.11ty";
 import PriceView from "./PriceView";
 
 interface ProductInfoItemProps {
@@ -84,6 +82,31 @@ export function ProductImage({ className = "", ...data }: ProductImageProps) {
       decoding="async"
       className={"aspect-4-4 cover " + className}
     />
+  );
+}
+
+interface ProductImagesProps {
+  images: React.ReactNode[] | string[];
+  alt: string;
+}
+
+export function ProductImages({ images, alt }: ProductImagesProps) {
+  return (
+    <section aria-label={`Fotos de ${alt}`} className="splide">
+      <div className="splide__track">
+        <ul className="splide__list">
+          {images.map((image, index) => (
+            <li className="splide__slide" key={index}>
+              {typeof image == "string" ? (
+                <ProductImage src={image} alt={alt} />
+              ) : (
+                image
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 

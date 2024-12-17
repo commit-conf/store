@@ -27,11 +27,11 @@ export interface TShirtVariant {
   sizes: ClothingSize;
   stripeURL: string;
   price: number;
-  image: string;
+  images: string[];
 }
 
 export interface TShirt extends BaseProduct {
-  variants: TShirtVariant[];
+  variants: { [K in ClothingType]: TShirtVariant };
   color: I18nEntry;
   minPrice: number;
   material: I18nEntry;

@@ -14,6 +14,9 @@ module.exports = {
     purgecss({
       content: ["./src/**/*.njk", "./src/**/*.ts", "./src/**/*.tsx"],
       variables: true,
+      safelist: {
+        greedy: [/^splide/],
+      },
     }),
     autoprefixer,
     cssnano({

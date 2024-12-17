@@ -1,7 +1,7 @@
 import React from "react";
 import { StickersPack } from "../../_data/products/Product";
 import ProductView, {
-  ProductImage,
+  ProductImages,
   ProductInfoItem,
   PurchaseButton,
 } from "./ProductView.11ty";
@@ -29,8 +29,8 @@ export default function StickersPackProductView({
         />
       }
       image={
-        <ProductImage
-          src={stickersPack.images[0]}
+        <ProductImages
+          images={stickersPack.images}
           alt={i18n[stickersPack.name]}
         />
       }

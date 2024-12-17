@@ -7,7 +7,7 @@
     "==": "========== Build ===========",
     "build:sass": "bin/compile-css",
     "build:js": "NODE_ENV=production npx webpack --config webpack.config.ts",
-    "build:eleventy": "dotenv -v .env.production -- tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
+    "build:eleventy": "dotenv -e .env.production -- tsx ./node_modules/.bin/eleventy --config=eleventy.config.ts",
     "build": "npm run clean; npm-run-all build:sass build:js build:eleventy",
     "===": "========== Watch ===========",
     "watch:sass": "inotifywait -m -r -e close_write,create,delete src/_sass/ | while read NEWFILE; do npm run build:sass && cp css/*.css _site/css/; done",
@@ -52,5 +52,8 @@
     "webpack": "^5.95.0",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@splidejs/splide": "^4.1.4"
   }
 }
