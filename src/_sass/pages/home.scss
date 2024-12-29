@@ -75,11 +75,13 @@ img.cover {
   object-fit: cover;
 }
 .product-image {
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out,
-    border-radius 0.3s ease-out;
+  --product-animation: 0.3s 0.5s ease-out;
+  transition: transform var(--product-animation),
+    box-shadow var(--product-animation), border-radius var(--product-animation),
+    border-width var(--product-animation);
   display: block;
   overflow: hidden;
-  border: 2px solid white;
+  border: 0px solid white;
   border-radius: 0px;
 }
 .product-image:hover,
@@ -87,6 +89,7 @@ img.cover {
   transform: scale(1.05);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   border-radius: 10px;
+  border-width: 2px;
 }
 
 @media (min-width: 768px) {

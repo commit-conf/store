@@ -23,6 +23,7 @@ function ProductItemView({ product, price }: ProductItemViewProps) {
       <a
         className="no-decoration product-image"
         href={`/es/products/${product.id}`}
+        title={i18n[product.description]}
       >
         <div className="flex-column">
           <img
@@ -32,7 +33,6 @@ function ProductItemView({ product, price }: ProductItemViewProps) {
             decoding="async"
             className="aspect-4-4 cover"
             aria-description={i18n[product.description]}
-            title={i18n[product.description]}
             src={product.images[0]}
           />
           <div className="flex-column justify-between padding-4">
