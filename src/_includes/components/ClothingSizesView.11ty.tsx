@@ -9,7 +9,7 @@ interface ClothingSizesViewProps {
 export default function ClothingSizesView({ sizes }: ClothingSizesViewProps) {
   const { i18n } = React.useContext(I18nContext);
   return (
-    <div className="wide flex-column margin-bottom">
+    <div className="wide overflow-auto margin-bottom">
       <table className="table responsive margin-bottom margin-top">
         <thead>
           <tr>
@@ -21,7 +21,7 @@ export default function ClothingSizesView({ sizes }: ClothingSizesViewProps) {
         </thead>
         <tbody>
           <tr>
-            <td>{i18n.Width}</td>
+            <td>{i18n.Width} (cm)</td>
             {Object.entries(sizes).map(([size, { width, height }], index) => (
               <td
                 key={size}
@@ -34,7 +34,7 @@ export default function ClothingSizesView({ sizes }: ClothingSizesViewProps) {
             ))}
           </tr>
           <tr>
-            <td>{i18n.Height}</td>
+            <td>{i18n.Height} (cm)</td>
             {Object.entries(sizes).map(([size, { width, height }], index) => (
               <td
                 key={size}

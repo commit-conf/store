@@ -1,10 +1,10 @@
-import { Eleventy } from "../../../types";
 import React from "react";
+import { Eleventy } from "../../../types";
+import { BaseProduct } from "../../_data/products/Product";
 import site from "../../_data/site";
-import { getI18n, I18nContext } from "../i18n/index.11ty";
 import Footer from "../components/Footer.11ty";
 import Topbar from "../components/Topbar.11ty";
-import { BaseProduct } from "../../_data/products/Product";
+import { getI18n, I18nContext } from "../i18n/index.11ty";
 
 interface LayoutData extends Eleventy, React.PropsWithChildren {
   product?: BaseProduct;
@@ -25,7 +25,7 @@ export default function BaseLayoutView(data: LayoutData) {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
           <meta
             httpEquiv="Content-Security-Policy"
-            content={`default-src 'none'; base-uri 'self'; block-all-mixed-content; font-src fonts.gstatic.com 'self'; frame-src *.youtube.com *.youtube-nocookie.com; img-src 'self' data: www.google-analytics.com *.googleapis.com *.youtube.com *.ytimg.com; script-src ${unsafeInline} 'self' www.google-analytics.com www.googletagmanager.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; connect-src 'self' www.google-analytics.com *.googleapis.com; manifest-src 'self'`}
+            content={`default-src 'none'; base-uri 'self'; block-all-mixed-content; font-src fonts.gstatic.com 'self'; img-src 'self' data: *.googleapis.com; script-src ${unsafeInline} 'self' www.googletagmanager.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; connect-src 'self' *.googleapis.com; manifest-src 'self'`}
           />
 
           <link rel="stylesheet" href={assets.css} />

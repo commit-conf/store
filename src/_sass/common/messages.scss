@@ -12,3 +12,10 @@
     border-left: var(--border-radius-m) solid var(--color-orange-500);
   }
 }
+
+.warning {
+  background-color: var(--color-yellow-200);
+  border-left: var(--border-radius-m) solid var(--color-yellow-500);
+  padding: var(--padding-4) var(--padding-8);
+  margin-bottom: var(--margin-4);
+}

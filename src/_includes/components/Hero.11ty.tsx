@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { Eleventy } from "../../../types";
-import site from "../../_data/site";
 import { I18nContext } from "../i18n/index.11ty";
 
 export function Hero({}: Eleventy) {
@@ -21,7 +20,7 @@ export function Hero({}: Eleventy) {
         </span>
         <div className="flex-row justify-center">
           <a
-            className="button primary small"
+            className="button primary"
             href="https://commit-conf.com"
             target="_blank"
           >

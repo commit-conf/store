@@ -15,6 +15,7 @@
   z-index: 1;
   background-color: var(--color-stone-100);
   position: relative;
+  margin-bottom: var(--margin-6);
 }
 
 .hero-text-container {
@@ -72,6 +73,20 @@
 
 img.cover {
   object-fit: cover;
+}
+.product-image {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out,
+    border-radius 0.3s ease-out;
+  display: block;
+  overflow: hidden;
+  border: 2px solid white;
+  border-radius: 0px;
+}
+.product-image:hover,
+.product-image:focus {
+  transform: scale(1.05);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 @media (min-width: 768px) {

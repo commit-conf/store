@@ -8,6 +8,11 @@
 
 .max-width-1280 {
   max-width: 1280px;
+  margin: var(--margin-8);
+  @media (min-width: 1280px) {
+    margin: auto;
+    padding: var(--padding-8);
+  }
 }
 
 .width-30 {

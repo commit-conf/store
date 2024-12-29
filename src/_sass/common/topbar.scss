@@ -18,7 +18,7 @@
   color: var(--color-topbar-fg);
   text-decoration: none;
   display: block;
-  font-size: var(--font-size-l);
+  white-space: nowrap;
   &:hover,
   &:active,
   &:focus {

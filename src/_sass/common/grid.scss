@@ -57,6 +57,9 @@
 .gap-3 {
   gap: var(--gap-8);
 }
+.gap-4 {
+  gap: var(--gap-10);
+}
 
 .autofill-120 {
   grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));

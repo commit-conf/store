@@ -1,5 +1,6 @@
 import React from "react";
 import { I18nContext, I18nEntry } from "../i18n/index.11ty";
+import { NoDeliveryWarning } from "./NoDeliveryWarning";
 import PriceView from "./PriceView";
 
 interface ProductInfoItemProps {
@@ -130,13 +131,16 @@ export default function ProductView({
   const { i18n, lang } = React.useContext(I18nContext);
   // TODO carrousel?
   return (
-    <div className="gap-3 margin-top margin-bottom block medium-grid grid-cols-2">
+    <div className="gap-4 margin-top margin-bottom block medium-grid grid-cols-2">
       <div>
-        <a className="small" href={`/${lang}`}>
-          &lt; {i18n.goHome}
-        </a>
+        <p className="small">
+          <a className="font-weight-bold" href={`/${lang}`}>
+            &lt; {i18n.goHome}
+          </a>
+        </p>
         <h2>{i18n[name]}</h2>
         <p>{i18n[description]}</p>
+        <NoDeliveryWarning />
         <div role="region" className="flex-column flex-wrap gap-1">
           {details}
         </div>
@@ -144,17 +148,17 @@ export default function ProductView({
       <div className="flex-column gap-2">
         {image}
         <div className="flex-column gap-05">
-          <p className="no-margin font-weight-bold font-size-2xl">
-            {i18n.Price}:{" "}
-            {typeof price == "number" ? (
-              <PriceView price={price} lang={lang} />
-            ) : (
-              price
-            )}{" "}
-            <small className="font-size-m font-weight-normal">
+          <div>
+            <div className="font-weight-bold">{i18n.Price}</div>
+            <div>
+              {typeof price == "number" ? (
+                <PriceView price={price} lang={lang} />
+              ) : (
+                price
+              )}{" "}
               ({i18n.TaxIncluded})
-            </small>
-          </p>
+            </div>
+          </div>
           <div className="flex-column">{form}</div>
         </div>
       </div>

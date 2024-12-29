@@ -7,13 +7,13 @@ const maleVariant: TShirtVariant = {
   price: 18,
   images: [`${site.productImageFolder}/tshirt-2025-male.avif`],
   sizes: {
-    S: { width: "49cm", height: "69cm" },
-    M: { width: "52cm", height: "71cm" },
-    L: { width: "55cm", height: "73cm" },
-    XL: { width: "58cm", height: "75cm" },
-    '2XL': { width: "62cm", height: "77cm" },
-    '3XL': { width: "66cm", height: "79cm" },
-    '4XL': { width: "70cm", height: "81cm" },
+    S: { width: "49", height: "69" },
+    M: { width: "52", height: "71" },
+    L: { width: "55", height: "73" },
+    XL: { width: "58", height: "75" },
+    '2XL': { width: "62", height: "77" },
+    '3XL': { width: "66", height: "79" },
+    '4XL': { width: "70", height: "81" },
   },
   stripeURL: site.TSHIRT_2025_MALE_STRIPE_URL
 };
@@ -23,12 +23,12 @@ const femaleVariant: TShirtVariant = {
   price: 18,
   images: [`${site.productImageFolder}/tshirt-2025-female.avif`],
   sizes: {
-    S: { width: "41cm", height: "62cm" },
-    M: { width: "44cm", height: "64cm" },
-    L: { width: "47cm", height: "66cm" },
-    XL: { width: "50cm", height: "68cm" },
-    '2XL': { width: "54cm", height: "69cm" },
-    '3XL': { width: "57cm", height: "70cm" },
+    S: { width: "41", height: "62" },
+    M: { width: "44", height: "64" },
+    L: { width: "47", height: "66" },
+    XL: { width: "50", height: "68" },
+    '2XL': { width: "54", height: "69" },
+    '3XL': { width: "57", height: "70" },
   },
   stripeURL: site.TSHIRT_2025_FEMALE_STRIPE_URL
 }
@@ -37,12 +37,12 @@ const kidsVariant: TShirtVariant = {
   price: 15,
   images: [`${site.productImageFolder}/tshirt-2025-kids.avif`],
   sizes: {
-    '1/2': { width: "29cm", height: "39cm" },
-    '3/4': { width: "32cm", height: "43cm" },
-    '5/6': { width: "35cm", height: "47cm" },
-    '7/8': { width: "38cm", height: "51cm" },
-    '9/10': { width: "41cm", height: "55cm" },
-    '11/12': { width: "44cm", height: "59cm" },
+    '1/2': { width: "29", height: "39" },
+    '3/4': { width: "32", height: "43" },
+    '5/6': { width: "35", height: "47" },
+    '7/8': { width: "38", height: "51" },
+    '9/10': { width: "41", height: "55" },
+    '11/12': { width: "44", height: "59" },
   },
   stripeURL: site.TSHIRT_2025_KIDS_STRIPE_URL
 };
