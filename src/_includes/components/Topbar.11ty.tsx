@@ -9,18 +9,6 @@ export default function Topbar(data: Eleventy) {
       name: i18n.TheEvent,
       url: "https://commit-conf.com",
     },
-    data.lang == "en"
-      ? {
-          name: "Español",
-          url: data.page.url.replace("/en/", "/es/"),
-        }
-      : {
-          name: "English",
-          url:
-            data.page.url == "/"
-              ? "/en"
-              : data.page.url.replace("/es/", "/en/"),
-        },
   ];
   return (
     <nav

@@ -35,7 +35,7 @@ export function getCup2025Scheme(i18n: ResType) {
       price: Cup2025.price,
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
-      url: `${site.baseUrl}/${i18n.locale}/products/cup-2025`,
+      url: `${site.baseUrl}/products/cup-2025`,
     },
   }
 }

@@ -33,9 +33,6 @@ export interface ResType {
   Type: string;
   Male: string;
   Female: string;
-  NoShipping: string;
-  Continue: string;
-  Cancel: string;
   Cup2025: string;
   Cup2025Description: string;
   Body2025: string;
@@ -45,8 +42,6 @@ export interface ResType {
   '9m': string;
   '12m': string;
   '18m': string;
-  TShirtStaff: string;
-  TShirtStaffDescription: string;
   Black: string;
   Kids: string;
   From: string;

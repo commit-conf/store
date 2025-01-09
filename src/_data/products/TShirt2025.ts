@@ -5,7 +5,7 @@ import { ClothingType, TShirt, TShirtVariant } from "./Product";
 const maleVariant: TShirtVariant = {
   type: 'Male',
   price: 18,
-  images: [`${site.productImageFolder}/tshirt-2025-male.avif`],
+  images: [`${site.productImageFolder}/tshirt-2025-male.avif`,`${site.productImageFolder}/tshirt-2025-isolated.avif`],
   sizes: {
     S: { width: "49", height: "69" },
     M: { width: "52", height: "71" },
@@ -21,7 +21,7 @@ const maleVariant: TShirtVariant = {
 const femaleVariant: TShirtVariant = {
   type: 'Female',
   price: 18,
-  images: [`${site.productImageFolder}/tshirt-2025-female.avif`],
+  images: [`${site.productImageFolder}/tshirt-2025-female.avif`,`${site.productImageFolder}/tshirt-2025-isolated.avif`],
   sizes: {
     S: { width: "41", height: "62" },
     M: { width: "44", height: "64" },
@@ -35,7 +35,7 @@ const femaleVariant: TShirtVariant = {
 const kidsVariant: TShirtVariant = {
   type: 'Kids',
   price: 15,
-  images: [`${site.productImageFolder}/tshirt-2025-kids.avif`],
+  images: [`${site.productImageFolder}/tshirt-2025-kids.avif`,`${site.productImageFolder}/tshirt-2025-isolated.avif`],
   sizes: {
     '1/2': { width: "29", height: "39" },
     '3/4': { width: "32", height: "43" },
@@ -93,7 +93,7 @@ export function getTShirt2025Scheme(i18n: ResType) {
           },
           "offers": {
             "@type": "Offer",
-            "url": `${site.baseUrl}/${i18n.locale}/products/tshirt-2025?type=${variant.type.toLowerCase()}`,
+            "url": `${site.baseUrl}/products/tshirt-2025?type=${variant.type.toLowerCase()}`,
             "priceCurrency": "EUR",
             "price": variant.price,
             "itemCondition": "https://schema.org/NewCondition",

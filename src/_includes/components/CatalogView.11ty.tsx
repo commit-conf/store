@@ -22,7 +22,7 @@ function ProductItemView({ product, price }: ProductItemViewProps) {
     <li>
       <a
         className="no-decoration product-image"
-        href={`/es/products/${product.id}`}
+        href={`/products/${product.id}`}
         title={i18n[product.description]}
       >
         <div className="flex-column">

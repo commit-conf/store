@@ -1,5 +1,4 @@
 import React from "react";
-import en from "./en.11ty";
 import es from "./es.11ty";
 import { ResType } from "./ResType.11ty";
 
@@ -8,7 +7,6 @@ export type Lang = "en" | "es";
 export type I18nEntry = keyof ResType;
 
 const _i18n = {
-  en,
   es
 } as Record<Lang, ResType>;
 

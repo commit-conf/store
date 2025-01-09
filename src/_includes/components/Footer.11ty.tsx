@@ -29,17 +29,20 @@ export default function Footer({ lang }: Eleventy) {
       links: [
         {
           title: i18n.PrivacyPolicy,
-          href: `https://commit-conf.com/${lang}/privacy-policy`,
+          href: `https://2025.commit-conf.com/${lang}/privacy-policy`,
         },
         {
           title: i18n.CodeOfConduct,
-          href: `https://commit-conf.com/${lang}/code-of-conduct`,
+          href: `https://2025.commit-conf.com/${lang}/code-of-conduct`,
         },
         {
           title: i18n.TermsAndConditions,
-          href: `https://commit-conf.com/${lang}/terms-and-conditions`,
+          href: `https://2025.commit-conf.com/${lang}/terms-and-conditions`,
         },
-        { title: i18n.TheTeam, href: `https://commit-conf.com/${lang}/team` },
+        {
+          title: i18n.TheTeam,
+          href: `https://2025.commit-conf.com/${lang}/team`,
+        },
       ],
     },
   ];

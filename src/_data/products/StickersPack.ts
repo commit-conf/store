@@ -43,7 +43,7 @@ export function getStickersPackScheme(i18n: ResType){
       price: sticketrsPack.price,
       priceCurrency: "EUR",
       availability: "https://schema.org/InStock",
-      url: `${site.baseUrl}/${i18n.locale}/products/stickers-pack`,
+      url: `${site.baseUrl}/products/stickers-pack`,
     },
   }
 }

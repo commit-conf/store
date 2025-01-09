@@ -28,9 +28,16 @@ export function PurchaseButton({
 }: PurchaseButtonProps) {
   const { i18n } = React.useContext(I18nContext);
   return (
-    <div aria-live="assertive" aria-relevant="additions" className={className}>
-      <button
-        className={"purchase-button button primary text-center no-margin "}
+    <div
+      aria-live="assertive"
+      aria-relevant="additions"
+      className={"flex-row " + className}
+    >
+      <a
+        href={href}
+        {...rest}
+        className="button primary text-center no-margin"
+        target="_blank"
       >
         <svg
           stroke="currentColor"
@@ -50,23 +57,7 @@ export function PurchaseButton({
           <path d="M18 22l3.35 -3.284a2.143 2.143 0 0 0 .005 -3.071a2.242 2.242 0 0 0 -3.129 -.006l-.224 .22l-.223 -.22a2.242 2.242 0 0 0 -3.128 -.006a2.143 2.143 0 0 0 -.006 3.071l3.355 3.296z"></path>
         </svg>
         {i18n.OrderNow}
-      </button>
-      <div className="purchase-confirmation hide">
-        <p className="text-muted message warning">{i18n.NoShipping}</p>
-        <div className="flex-row gap-1 flex-wrap">
-          <a
-            href={href}
-            {...rest}
-            className="button primary text-center no-margin"
-            target="_blank"
-          >
-            {i18n.Continue}
-          </a>
-          <button className="purchase-cancel button tertiary text-center no-margin">
-            {i18n.Cancel}
-          </button>
-        </div>
-      </div>
+      </a>
     </div>
   );
 }
@@ -134,7 +125,7 @@ export default function ProductView({
     <div className="gap-4 margin-top margin-bottom block medium-grid grid-cols-2">
       <div>
         <p className="small">
-          <a className="font-weight-bold" href={`/${lang}`}>
+          <a className="font-weight-bold" href="/">
             &lt; {i18n.goHome}
           </a>
         </p>
