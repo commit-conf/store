@@ -15,7 +15,6 @@ const maleVariant: TShirtVariant = {
     '3XL': { width: "66", height: "79" },
     '4XL': { width: "70", height: "81" },
   },
-  stripeURL: site.TSHIRT_2025_MALE_STRIPE_URL
 };
 
 const femaleVariant: TShirtVariant = {
@@ -30,7 +29,6 @@ const femaleVariant: TShirtVariant = {
     '2XL': { width: "54", height: "69" },
     '3XL': { width: "57", height: "70" },
   },
-  stripeURL: site.TSHIRT_2025_FEMALE_STRIPE_URL
 }
 const kidsVariant: TShirtVariant = {
   type: 'Kids',
@@ -44,7 +42,6 @@ const kidsVariant: TShirtVariant = {
     '9/10': { width: "41", height: "55" },
     '11/12': { width: "44", height: "59" },
   },
-  stripeURL: site.TSHIRT_2025_KIDS_STRIPE_URL
 };
 
 const variants: {[K in ClothingType]: TShirtVariant} =  {

@@ -8,7 +8,6 @@ const sticketrsPack: StickersPack = {
   description: 'StickersPackDescription',
   price: 6,
   images: [`${site.productImageFolder}/stickers-pack-1.avif`],
-  stripeURL: site.STICKERS_PACK_1_STRIPE_URL,
   stickers: [{
     description: 'This machine has no brain. Please use your own.',
     image: `${site.productImageFolder}/no-brain-sticker.jpg`,

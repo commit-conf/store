@@ -34,7 +34,7 @@ export default function StickersPackProductView({
           alt={i18n[stickersPack.name]}
         />
       }
-      form={<PurchaseButton href={stickersPack.stripeURL} />}
+      form={<PurchaseButton />}
     />
   );
 }

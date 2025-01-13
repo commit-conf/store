@@ -25,7 +25,7 @@ export default function BodyProductView({ body }: BodyProductViewProps) {
           value={<ClothingSizesView sizes={body.sizes} />}
         />
       }
-      form={<PurchaseButton href={body.stripeURL} />}
+      form={<PurchaseButton />}
       image={<ProductImage src={body.images[0]} alt={i18n[body.name]} />}
     />
   );

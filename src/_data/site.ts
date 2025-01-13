@@ -7,13 +7,9 @@ export interface Site {
   email: string;
   xAccount: string;
   youtubeChannel: string;
+  koliseoUrl: string
   environment?: string;
-  TSHIRT_2025_MALE_STRIPE_URL: string;
-  TSHIRT_2025_FEMALE_STRIPE_URL: string;
-  TSHIRT_2025_KIDS_STRIPE_URL: string;
-  TSHIRT_2025_BODY_STRIPE_URL: string;
-  CUP_2025_STRIPE_URL: string;
-  STICKERS_PACK_1_STRIPE_URL: string;
+  // add environment properties here and on the .env files
 }
 
 const site: Site = {
@@ -25,13 +21,8 @@ const site: Site = {
   email: "info@commit-conf.com",
   xAccount: "@commitconf",
   youtubeChannel: "UCd_1KHg4t2VKGsSDF8OD5Cw",
+  koliseoUrl: 'https://koliseo.com/commit/store/tickets',
   environment: process.env.ENV || "production",
-  TSHIRT_2025_MALE_STRIPE_URL: process.env.TSHIRT_2025_MALE_STRIPE_URL || "",
-  TSHIRT_2025_FEMALE_STRIPE_URL: process.env.TSHIRT_2025_FEMALE_STRIPE_URL || "",
-  TSHIRT_2025_KIDS_STRIPE_URL: process.env.TSHIRT_2025_KIDS_STRIPE_URL || "",
-  TSHIRT_2025_BODY_STRIPE_URL: process.env.TSHIRT_2025_BODY_STRIPE_URL || "",
-  CUP_2025_STRIPE_URL: process.env.CUP_2025_STRIPE_URL || "",
-  STICKERS_PACK_1_STRIPE_URL: process.env.STICKERS_PACK_1_STRIPE_URL || "",
 };
 
 export default site;

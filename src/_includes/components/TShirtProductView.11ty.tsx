@@ -46,11 +46,8 @@ function TShirtDetails({ tshirt }: TShirtProductViewProps) {
   );
 }
 
-function Buttons({ tshirt }: TShirtProductViewProps) {
+function TShirtPurchaseButton() {
   const { i18n } = React.useContext(I18nContext);
-  const defaultVariant = Object.values(tshirt.variants).find(
-    (value) => value.type == DEFAULT_TYPE
-  );
   return (
     <>
       <ProductInfoItem
@@ -67,20 +64,12 @@ function Buttons({ tshirt }: TShirtProductViewProps) {
           </select>
         }
       />
-
-      <PurchaseButton
-        href={defaultVariant!.stripeURL}
-        data-switch-group="type"
-        data-switch="href"
-        data-Male={tshirt.variants["Male"].stripeURL}
-        data-Female={tshirt.variants["Female"].stripeURL}
-        data-Kids={tshirt.variants["Kids"].stripeURL}
-      />
+      <PurchaseButton />
     </>
   );
 }
 
-function Images({ tshirt }: TShirtProductViewProps) {
+function TShirtImages({ tshirt }: TShirtProductViewProps) {
   const { i18n } = React.useContext(I18nContext);
   const defaultVariant = Object.values(tshirt.variants).find(
     (value) => value.type == DEFAULT_TYPE
@@ -133,8 +122,8 @@ export default function TShirtProductView({ tshirt }: TShirtProductViewProps) {
       description={tshirt.description}
       price={<Price tshirt={tshirt} />}
       details={<TShirtDetails tshirt={tshirt} />}
-      form={<Buttons tshirt={tshirt} />}
-      image={<Images tshirt={tshirt} />}
+      form={<TShirtPurchaseButton />}
+      image={<TShirtImages tshirt={tshirt} />}
     />
   );
 }

@@ -8,7 +8,6 @@ const Body2025: Body = {
   description: 'Body2025Description',
   price: 19,
   images: [`${site.productImageFolder}/body-2025.avif`],
-  stripeURL: site.TSHIRT_2025_BODY_STRIPE_URL,
   color: 'White',
   material: '96%Cotton4%Elastane',
   sizes: {

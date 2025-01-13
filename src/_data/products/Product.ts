@@ -25,7 +25,6 @@ export type ClothingType = "Male" | "Female" | "Kids";
 export interface TShirtVariant {
   type: ClothingType;
   sizes: ClothingSize;
-  stripeURL: string;
   price: number;
   images: string[];
 }
@@ -40,7 +39,6 @@ export interface TShirt extends BaseProduct {
 export interface Body extends BaseProductWithPrice {
   color: I18nEntry;
   material: I18nEntry;
-  stripeURL: string;
   sizes: ClothingSize;
 }
 
@@ -52,13 +50,11 @@ export interface Sticker {
 
 export interface StickersPack extends BaseProductWithPrice {
   stickers: Sticker[];
-  stripeURL: string;
 }
 
 export interface Cup extends BaseProductWithPrice {
   color: I18nEntry;
   capacity: string;
-  stripeURL: string;
   size: {
     height: string;
     diameter: string;

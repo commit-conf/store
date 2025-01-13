@@ -2,6 +2,7 @@ import React from "react";
 import { I18nContext, I18nEntry } from "../i18n/index.11ty";
 import { NoDeliveryWarning } from "./NoDeliveryWarning";
 import PriceView from "./PriceView";
+import site from "../../_data/site";
 
 interface ProductInfoItemProps {
   label: string;
@@ -18,12 +19,11 @@ export function ProductInfoItem({ label, value }: ProductInfoItemProps) {
 }
 
 interface PurchaseButtonProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {}
 
 // Ahora se le pasarían las props del href y data-switch al enlace directamente
 export function PurchaseButton({
   className = "",
-  href,
   ...rest
 }: PurchaseButtonProps) {
   const { i18n } = React.useContext(I18nContext);
@@ -34,7 +34,7 @@ export function PurchaseButton({
       className={"flex-row " + className}
     >
       <a
-        href={href}
+        href={site.koliseoUrl}
         {...rest}
         className="button primary text-center no-margin"
         target="_blank"
