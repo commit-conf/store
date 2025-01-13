@@ -44,7 +44,6 @@ export interface Body extends BaseProductWithPrice {
 
 export interface Sticker {
   dimensions: string;
-  image: string;
   description: string;
 }
 

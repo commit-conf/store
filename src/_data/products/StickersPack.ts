@@ -10,20 +10,16 @@ const sticketrsPack: StickersPack = {
   images: [`${site.productImageFolder}/stickers-pack-1.avif`],
   stickers: [{
     description: 'This machine has no brain. Please use your own.',
-    image: `${site.productImageFolder}/no-brain-sticker.jpg`,
     dimensions: "10.4x3.6cm"
   }, {
-    description: ' Code. Test. Review. Commit Conf.',
-    image: `${site.productImageFolder}/code-test-review-sticker.jpg`,
+    description: 'Code. Test. Review. Commit.',
     dimensions: "4.8x3.8cm"
   }, {
-    description: 'Guru Laptop. Guru stuff inside.',
-    image: `${site.productImageFolder}/guru-developer-sticker.jpg`,
-    dimensions: "10.4x3.4cm"
+    description: 'Don\'t look back. You\'re not going that way.',
+    dimensions: "5.2x3.8cm"
   }, {
-    description: 'It\'s dangerous to go alone. Take this.',
-    image: `${site.productImageFolder}/beginner-developer-sticker.jpg`,
-    dimensions: "10.4x3.6cm"
+    description: 'Awake is the new sleep.',
+    dimensions: "6.2x3.8cm"
   }]
 }
 
