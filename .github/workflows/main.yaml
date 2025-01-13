@@ -1,0 +1,45 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "static/**"
+      - "src/**"
+      - ".eleventy.config.ts"
+      - "postcss.config.js"
+      - "webpack.config.ts"
+      - ".env.production"
+      - ".github/**"
+      - "bin/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build & deploy website
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # you must check out the repository
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+      - name: Checkout gh-pages branch on subfolder
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: .gh-pages
+      # setup node
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "npm"
+      # install node dependencies
+      - run: npm i
+      # compile
+      - run: npm run build
+      - name: Configure CI credentials
+        run: ./bin/configure-ci
+      - name: deploy
+        run: ./bin/deploy

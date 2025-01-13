@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -e
+
+FOLDER=.gh-pages
+echo "Current folder: $(pwd)"
+if [ ! -d ${FOLDER} ]; then
+  # this can olny be on a local environment, not on CICD
+  echo "Warning: ${FOLDER} does not exist. Are you on CICD?"
+  exit 1
+fi
+
+# get the last commit message from the main branch
+COMMIT_MESSAGE=$(git log origin/main -1 --pretty=%B)
+
+cd ${FOLDER}
+echo "Current folder: $(pwd)"
+rm -rf *
+rm -rf .github
+cp -R ../_site/* .
+
+# if there is anything to commit
+if [ -z "$(git status --porcelain)" ]; then
+  echo "Nothing to commit"
+else 
+  git add -A
+  git commit -m "${COMMIT_MESSAGE}"
+  git push origin gh-pages
+fi
+
+
+cd ..
+echo "Successfully deployed" 
