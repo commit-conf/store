@@ -18,11 +18,7 @@ export default function Topbar(data: Eleventy) {
     >
       <ul className="flex-row items-center no-margin unstyled">
         <li className="flex-grow">
-          <a
-            href={`/${data.lang}`}
-            className="topbar-logo"
-            aria-label={i18n.goHome}
-          >
+          <a href="/" className="topbar-logo" aria-label={i18n.goHome}>
             <img
               aria-hidden="true"
               className="topbar-logo-img"

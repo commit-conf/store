@@ -65,7 +65,7 @@ export default function Footer({ lang }: Eleventy) {
         ))}
       </div>
       <div className="footer-row theme-2">
-        <a href={lang} className="logo-footer" aria-label={i18n.goHome}></a>
+        <a href="/" className="logo-footer" aria-label={i18n.goHome}></a>
       </div>
     </footer>
   );
