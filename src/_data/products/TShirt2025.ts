@@ -4,7 +4,7 @@ import { ClothingType, TShirt, TShirtVariant } from "./Product";
 
 const maleVariant: TShirtVariant = {
   type: 'Male',
-  price: 18,
+  price: 15,
   images: [`${site.productImageFolder}/tshirt-2025-male.avif`,`${site.productImageFolder}/tshirt-2025-isolated.avif`],
   sizes: {
     S: { width: "49", height: "69" },
@@ -20,7 +20,7 @@ const maleVariant: TShirtVariant = {
 
 const femaleVariant: TShirtVariant = {
   type: 'Female',
-  price: 18,
+  price: 15,
   images: [`${site.productImageFolder}/tshirt-2025-female.avif`,`${site.productImageFolder}/tshirt-2025-isolated.avif`],
   sizes: {
     S: { width: "41", height: "62" },
